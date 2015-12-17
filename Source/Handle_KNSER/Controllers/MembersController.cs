@@ -11,16 +11,13 @@ namespace Handle_KNSER.Controllers
     public class MembersController : ApiController
     {
 
-
+        private AuthRepository _repo = new AuthRepository();
         //public AngularJSAuthesEntities _db = new AngularJSAuthesEntities();
         // GET: api/Members
 
-        [Authorize]
         public IEnumerable<string> Get()
         {
-
-
-            return new string[] { "value1", "value2" };
+                return new string[] { "value1", "value2" };
         }
 
         // GET: api/Members/5

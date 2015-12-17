@@ -16,3 +16,21 @@ D:\BT\KNSER\Website_KNSER\bin\System.Web.Mvc.xml
 D:\BT\KNSER\Website_KNSER\obj\Debug\Website_KNSER.csprojResolveAssemblyReference.cache
 D:\BT\KNSER\Website_KNSER\obj\Debug\Website_KNSER.dll
 D:\BT\KNSER\Website_KNSER\obj\Debug\Website_KNSER.pdb
+E:\Project KNSer\Member\KNSers\Source\Website_KNSER\bin\Website_KNSER.dll.config
+E:\Project KNSer\Member\KNSers\Source\Website_KNSER\bin\Website_KNSER.dll
+E:\Project KNSer\Member\KNSers\Source\Website_KNSER\bin\Website_KNSER.pdb
+E:\Project KNSer\Member\KNSers\Source\Website_KNSER\bin\System.Web.Helpers.dll
+E:\Project KNSer\Member\KNSers\Source\Website_KNSER\bin\System.Web.Mvc.dll
+E:\Project KNSer\Member\KNSers\Source\Website_KNSER\bin\System.Web.Razor.dll
+E:\Project KNSer\Member\KNSers\Source\Website_KNSER\bin\System.Web.Webpages.Deployment.dll
+E:\Project KNSer\Member\KNSers\Source\Website_KNSER\bin\System.Web.Webpages.dll
+E:\Project KNSer\Member\KNSers\Source\Website_KNSER\bin\System.Web.Webpages.Razor.dll
+E:\Project KNSer\Member\KNSers\Source\Website_KNSER\bin\System.Web.Razor.xml
+E:\Project KNSer\Member\KNSers\Source\Website_KNSER\bin\System.Web.Webpages.xml
+E:\Project KNSer\Member\KNSers\Source\Website_KNSER\bin\System.Web.Webpages.Deployment.xml
+E:\Project KNSer\Member\KNSers\Source\Website_KNSER\bin\System.Web.Webpages.Razor.xml
+E:\Project KNSer\Member\KNSers\Source\Website_KNSER\bin\System.Web.Helpers.xml
+E:\Project KNSer\Member\KNSers\Source\Website_KNSER\bin\System.Web.Mvc.xml
+E:\Project KNSer\Member\KNSers\Source\Website_KNSER\obj\Debug\Website_KNSER.csprojResolveAssemblyReference.cache
+E:\Project KNSer\Member\KNSers\Source\Website_KNSER\obj\Debug\Website_KNSER.dll
+E:\Project KNSer\Member\KNSers\Source\Website_KNSER\obj\Debug\Website_KNSER.pdb

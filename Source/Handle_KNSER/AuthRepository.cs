@@ -33,9 +33,23 @@ namespace Handle_KNSER
             };
 
             var result = await _userManager.CreateAsync(user, userModel.Password);
-
             return result;
         }
+
+
+        /// <summary>
+        /// Tạo roles
+        /// </summary>
+        /// <returns></returns>
+        //public bool CreateRole()
+        //{
+        //    IdentityRole role = new IdentityRole();
+        //    role.Name = "Moderator";
+        //    role.Id.GetHashCode();
+        //    _ctx.Roles.Add(role);
+        //    _ctx.SaveChanges();
+        //    return true;
+        //}
 
         public async Task<IdentityUser> FindUser(string userName, string password)
         {
@@ -47,7 +61,6 @@ namespace Handle_KNSER
         public Client FindClient(string clientId)
         {
             var client = _ctx.Clients.Find(clientId);
-
             return client;
         }
 
