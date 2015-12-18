@@ -304,7 +304,7 @@ namespace Handle_KNSER.Controllers
             {
                 //You can get it from here: https://developers.facebook.com/tools/accesstoken/
                 //More about debug_tokn here: http://stackoverflow.com/questions/16641083/how-does-one-get-the-app-access-token-for-debug-token-inspection-on-facebook
-                var appToken = "xxxxxx";
+                var appToken = "CAAKqtHVFGw4BAPFj6a2a0d9dbzLidZC7tDu7krf8QBrIZB1NNKFlcpkmsngBlIOlpwXe7TnFjib7oI61FiZAkBVMS9rVioDHyxm17ZBn8js5nMsVFbG9pECNcw9v8SBvPDn93WbXQFGIQmhbkk9LZCkLyRMg46mZBjMXVdZAM7EZCkJyxZBwhc185joOJRZApZCZCZCIflnqy7SK7xFS9YTtbEDdf";
                 verifyTokenEndPoint = string.Format("https://graph.facebook.com/debug_token?input_token={0}&access_token={1}", accessToken, appToken);
             }
             else if (provider == "Google")

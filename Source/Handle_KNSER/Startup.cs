@@ -57,8 +57,8 @@ namespace Handle_KNSER
             //Configure Google External Login
             googleAuthOptions = new GoogleOAuth2AuthenticationOptions()
             {
-                ClientId = "xxxxxx",
-                ClientSecret = "xxxxxx",
+                ClientId = "571945762401-ufniek581t8j3p945r58ebiu5e65a14o.apps.googleusercontent.com",
+                ClientSecret = "VKhcAqo_yJiDNuSHBZByxyVo",
                 Provider = new GoogleAuthProvider()
             };
             app.UseGoogleAuthentication(googleAuthOptions);
@@ -66,8 +66,8 @@ namespace Handle_KNSER
             //Configure Facebook External Login
             facebookAuthOptions = new FacebookAuthenticationOptions()
             {
-                AppId = "xxxxxx",
-                AppSecret = "xxxxxx",
+                AppId = "533935936765221",
+                AppSecret = "b6d06030aecd76da39a84e83e47b5eee",
                 Provider = new FacebookAuthProvider()
             };
             app.UseFacebookAuthentication(facebookAuthOptions);
