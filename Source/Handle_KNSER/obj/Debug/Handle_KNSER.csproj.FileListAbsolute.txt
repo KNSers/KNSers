@@ -121,3 +121,6 @@ E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.csproj
 E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.dll
 E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.pdb
 E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.KNSERDB.resources
+E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\bin\HtmlAgilityPack.dll
+E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\bin\HtmlAgilityPack.pdb
+E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\bin\HtmlAgilityPack.xml
