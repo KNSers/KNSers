@@ -120,3 +120,4 @@ E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrat
 E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.csproj.GenerateResource.Cache
 E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.dll
 E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.pdb
+E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.KNSERDB.resources

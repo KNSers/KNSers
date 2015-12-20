@@ -166,7 +166,12 @@
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\RefreshTokensController.cs" />
     <Compile Include="Entities\Client.cs" />
+    <Compile Include="Entities\Event.cs" />
+    <Compile Include="Entities\Letter.cs" />
+    <Compile Include="Entities\Member.cs" />
+    <Compile Include="Entities\Participant.cs" />
     <Compile Include="Entities\RefreshToken.cs" />
+    <Compile Include="Entities\Request.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -174,6 +179,10 @@
     <Compile Include="Migrations\201512140848127_ChangedDatabaseName.cs" />
     <Compile Include="Migrations\201512140848127_ChangedDatabaseName.Designer.cs">
       <DependentUpon>201512140848127_ChangedDatabaseName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512200933452_KNSERDB.cs" />
+    <Compile Include="Migrations\201512200933452_KNSERDB.Designer.cs">
+      <DependentUpon>201512200933452_KNSERDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Enums.cs" />
@@ -202,6 +211,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201512140848127_ChangedDatabaseName.resx">
       <DependentUpon>201512140848127_ChangedDatabaseName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512200933452_KNSERDB.resx">
+      <DependentUpon>201512200933452_KNSERDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
