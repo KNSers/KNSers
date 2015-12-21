@@ -67,10 +67,10 @@ namespace Handle_KNSER.Models
         [HttpGet]
         public Rss20FeedFormatter Get()
         {
-            var feed = new SyndicationFeed("KNSERS", "Events", new Uri("http://www.fit.hcmus.edu.vn/vn/Default.aspx?tabid=97"));
+            var feed = new SyndicationFeed("KNSERS", "Events", new Uri("https://ticketbox.vn/events"));
             feed.Authors.Add(new SyndicationPerson("htluan2811@gmail.com"));
             feed.Categories.Add(new SyndicationCategory("Ticket Box"));
-            feed.Description = new TextSyndicationContent("Event Infomation");
+            feed.Description = new TextSyndicationContent("Vé hòa nhạc, vé hội thảo, vé sự kiện, vé thể thao ở Việt Nam | TicketBox");
 
 
             List<InfomationModel> ListOfInfo = new List<InfomationModel>();
@@ -83,12 +83,12 @@ namespace Handle_KNSER.Models
             {
                 SyndicationItem rss = new SyndicationItem(
                item.Title,
-               item.CreateAt.ToString(),                
-               new Uri("http://www.fit.hcmus.edu.vn/vn/Default.aspx?tabid=97"),
+               item.CreateAt.ToString(),
+               new Uri(item.WebsiteLink),
                "",
                DateTime.Now);
 
-               RssItems.Add(rss);
+                RssItems.Add(rss);
             }
             feed.Items = RssItems;
             //var ret = feed.GetRss20Formatter();
@@ -96,28 +96,49 @@ namespace Handle_KNSER.Models
             return new Rss20FeedFormatter(feed);
         }
 
+        [HttpGet]
+        [Route("api/RssFeed/rss")]
+        public IHttpActionResult getRss()
+        {
+            List<InfomationModel> ListOfInfo = new List<InfomationModel>();
+
+            ListOfInfo = Html2Rss();
+            return Ok(ListOfInfo);
+        }
 
         public List<InfomationModel> Html2Rss()
         {
             HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
             HtmlWeb hw = new HtmlWeb();
-            doc = hw.Load("http://www.fit.hcmus.edu.vn/vn/Default.aspx?tabid=97");
-            HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes("//table[@id=\"dnn_ctr785_ViewNews_ucShowPost_tblShowListOne\"]/tr[1]/td[1]/table");
+            doc = hw.Load("https://ticketbox.vn/events");
+            HtmlNodeCollection TitleNode = doc.DocumentNode.SelectNodes("//div[@class=\"table-cell event-title\"]/a");
+
+            // get other
+            //HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes("//div[@data-event-list-container=\"true\"]/div");
 
             List<InfomationModel> ListInfo = new List<InfomationModel>();
-            foreach (var item in nodes)
+            foreach (var item in TitleNode)
             {
                 InfomationModel Info = new InfomationModel();
-                
-                // get Title
-                Info.Title = item.SelectSingleNode("tr[1]/td[2]/a").InnerText; 
+                string title = item.GetAttributeValue("title", "").Trim();
+                Info.Title = modifyTicketBoxTitle(title);
 
-                // get Publish Date
-                Info.CreateAt = DateTime.ParseExact(item.SelectSingleNode("tr[1]/td[2]/span").InnerText.Trim().Replace("(", "").Replace(")", ""), "dd/MM/yyyy", null);
+                string href = item.GetAttributeValue("href", "").Trim();
+                Info.WebsiteLink = href;
                 ListInfo.Add(Info);
             }
+
+
             return ListInfo.ToList();
 
+        }
+
+        public string modifyTicketBoxTitle(string text = "")
+        {
+            string NewString = "";
+            text = text.Replace("&quot", "");
+            NewString = text;
+            return NewString;
         }
 
         #region Helper
