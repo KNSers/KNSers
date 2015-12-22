@@ -33,7 +33,7 @@ namespace Website_KNSER.Controllers
             try
             {
                 // TODO: Add insert logic here
-
+                
                 return RedirectToAction("Index");
             }
             catch
@@ -77,7 +77,6 @@ namespace Website_KNSER.Controllers
             try
             {
                 // TODO: Add delete logic here
-
                 return RedirectToAction("Index");
             }
             catch

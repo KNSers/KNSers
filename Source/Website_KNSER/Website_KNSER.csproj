@@ -87,6 +87,7 @@
     <Content Include="app\controllers\loginController.js" />
     <Content Include="app\controllers\ordersController.js" />
     <Content Include="app\controllers\refreshController.js" />
+    <Content Include="content\css\bootstrap.css" />
     <Content Include="scripts\angular-animate.js" />
     <Content Include="scripts\angular-animate.min.js" />
     <Content Include="scripts\angular-aria.js" />
@@ -156,6 +157,10 @@
     <Content Include="scripts\angular-aria.min.js.map" />
     <Content Include="scripts\angular-animate.min.js.map" />
     <Content Include="scripts\angular.min.js.map" />
+    <Content Include="content\css\bootswatch.less" />
+    <Content Include="content\css\variables.less" />
+    <Content Include="content\css\_bootswatch.scss" />
+    <Content Include="content\css\_variables.scss" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="scripts\i18n\angular-locale_aa-er.js" />
@@ -909,6 +914,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\RssEventController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -934,6 +940,7 @@
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\RssEvent\Index.cshtml" />
     <Content Include="scripts\version.json" />
+    <Content Include="Views\Error\PageNotFound.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
