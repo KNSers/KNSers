@@ -8,12 +8,12 @@ namespace Handle_KNSER.Models
 {
     public class UserModel
     {
-        [Required]
+        [Required(ErrorMessage = "Tên tài khoản không được để trống.")]
         [Display(Name = "User name")]
         public string UserName { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        
+        [StringLength(100, ErrorMessage = "Mật khẩu phải từ {2} ký tự trở lên.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }

@@ -915,6 +915,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\RequestController.cs" />
     <Compile Include="Controllers\RssEventController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -941,6 +942,7 @@
     <Content Include="Views\RssEvent\Index.cshtml" />
     <Content Include="scripts\version.json" />
     <Content Include="Views\Error\PageNotFound.cshtml" />
+    <Content Include="Views\Request\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
