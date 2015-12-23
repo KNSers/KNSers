@@ -87,7 +87,10 @@
     <Content Include="app\controllers\loginController.js" />
     <Content Include="app\controllers\ordersController.js" />
     <Content Include="app\controllers\refreshController.js" />
+    <Content Include="content\css\bootstrap-combined.min.css" />
+    <Content Include="content\css\bootstrap-datetimepicker.min.css" />
     <Content Include="content\css\bootstrap.css" />
+    <Content Include="datetime.html" />
     <Content Include="scripts\angular-animate.js" />
     <Content Include="scripts\angular-animate.min.js" />
     <Content Include="scripts\angular-aria.js" />
@@ -112,7 +115,7 @@
     <Content Include="scripts\angular-touch.js" />
     <Content Include="scripts\angular-touch.min.js" />
     <Content Include="scripts\angular.min.js" />
-    <Content Include="scripts\app\rssController.js" />
+    <Content Include="scripts\app\AppJS.js" />
     <Content Include="app\controllers\signupController.js" />
     <Content Include="app\controllers\tokensManagerController.js" />
     <Content Include="app\services\authInterceptorService.js" />
@@ -143,6 +146,8 @@
     <Content Include="scripts\angular-local-storage.min.js" />
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\authComplete.js" />
+    <Content Include="scripts\bootstrap-datetimepicker.js" />
+    <Content Include="scripts\bootstrap-datetimepicker.pt-BR.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\errors.json" />
