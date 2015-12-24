@@ -115,12 +115,8 @@
     <Content Include="scripts\angular-touch.js" />
     <Content Include="scripts\angular-touch.min.js" />
     <Content Include="scripts\angular.min.js" />
-<<<<<<< HEAD
     <Content Include="scripts\app\memberController.js" />
-    <Content Include="scripts\app\rssController.js" />
-=======
     <Content Include="scripts\app\AppJS.js" />
->>>>>>> origin/master
     <Content Include="app\controllers\signupController.js" />
     <Content Include="app\controllers\tokensManagerController.js" />
     <Content Include="app\services\authInterceptorService.js" />
