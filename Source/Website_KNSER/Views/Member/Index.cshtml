@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "MembersView";
+   Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Members View</h2>
+<div data-ng-app="RssApp">
+    <div data-ng-controller="memberController" class="container">
+        <table class="table table-bordered table-hover" style="width:800px">
+            <tr>
+                <td data-ng-hide="true">MemberID</td>
+                <th>KNSID</th>
+                <th>FullName</th>
+                <th>Active</th>
+                @*<th>City</th>
+                    <th>PostalCode</th>
+                    <th>Country</th>
+                    <th>Notes</th>*@
+            </tr>
+
+            <tr data-ng-repeat="member in members">
+                <td data-ng-hide="true">{{ member.memberId }}</td>
+                <td>
+                    <p data-ng-hide="member.editMode">{{ member.knsId }}</p>
+                </td>
+                <td>
+                    <p data-ng-hide="member.editMode">{{ member.fullname }}</p>
+                </td>
+                <td>
+                    <p data-ng-hide="member.editMode">{{member.isActive ? 'Hoạt động' : 'Ngưng hoạt động'}}</p>
+                    <input type="button" value="{{ member.isActive }}" ng-click="myStyle={color:'green'}" ng-style="myStyle">
+                    <p data-ng-hide="member.editMode"  > <a data-ng-click="changeColor(member)" ng-style="member.color" href="javascript:;"> {{ member.isActive }}</a></p>
+                </td>
+                @*<td>
+                        <p data-ng-hide="friend.editMode">{{ friend.Address }}</p>
+                        <input data-ng-show="friend.editMode" type="text" data-ng-model="friend.Address" />
+                    </td>
+                    <td>
+                        <p data-ng-hide="friend.editMode">{{ friend.City }}</p>
+                        <input data-ng-show="friend.editMode" type="text" data-ng-model="friend.City" />
+                    </td>
+                    <td>
+                        <p data-ng-hide="friend.editMode">{{ friend.PostalCode }}</p>
+                        <input data-ng-show="friend.editMode" type="text" data-ng-model="friend.PostalCode" />
+                    </td>
+                    <td>
+                        <p data-ng-hide="friend.editMode">{{ friend.Country }}</p>
+                        <input data-ng-show="friend.editMode" type="text" data-ng-model="friend.Country" />
+                    </td>
+                    <td>
+                        <p data-ng-hide="friend.editMode">{{ friend.Notes }}</p>
+                        <input data-ng-show="friend.editMode" type="text" data-ng-model="friend.Notes" />
+                    </td>*@
+                <td>
+                    <p data-ng-hide="member.editMode"><a data-ng-click="toggleEdit(member)" href="javascript:;">Edit</a> | <a data-ng-click="deletemember(member)" href="javascript:;">Delete</a></p>
+                    <p data-ng-show="member.editMode"><a data-ng-click="save(member)" href="javascript:;">Save</a> | <a data-ng-click="toggleEdit(member)" href="javascript:;">Cancel</a></p>
+                </td>
+            </tr>
+        </table>
+        <hr />
+
+    </div>
+</div>  

@@ -23,5 +23,7 @@ namespace Handle_KNSER.Entities
 
         public string KNSRole { get; set; }
 
+        public bool isActive { get; set; }
+
     }
 }

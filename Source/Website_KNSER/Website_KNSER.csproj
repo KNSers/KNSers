@@ -112,6 +112,7 @@
     <Content Include="scripts\angular-touch.js" />
     <Content Include="scripts\angular-touch.min.js" />
     <Content Include="scripts\angular.min.js" />
+    <Content Include="scripts\app\memberController.js" />
     <Content Include="scripts\app\rssController.js" />
     <Content Include="app\controllers\signupController.js" />
     <Content Include="app\controllers\tokensManagerController.js" />
@@ -915,6 +916,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\RequestController.cs" />
     <Compile Include="Controllers\RssEventController.cs" />
     <Compile Include="Global.asax.cs">
@@ -943,6 +945,7 @@
     <Content Include="scripts\version.json" />
     <Content Include="Views\Error\PageNotFound.cshtml" />
     <Content Include="Views\Request\Create.cshtml" />
+    <Content Include="Views\Member\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

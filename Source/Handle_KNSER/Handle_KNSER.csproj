@@ -44,9 +44,8 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+    <Reference Include="HtmlAgilityPack">
       <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -56,6 +55,12 @@
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Owin">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.1.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.1.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin">
@@ -160,6 +165,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.1.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.1.2.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +186,7 @@
     <Compile Include="Entities\Event.cs" />
     <Compile Include="Entities\Letter.cs" />
     <Compile Include="Entities\Member.cs" />
+    <Compile Include="Entities\Notification.cs" />
     <Compile Include="Entities\Participant.cs" />
     <Compile Include="Entities\RefreshToken.cs" />
     <Compile Include="Entities\Request.cs" />
@@ -183,6 +194,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
+    <Compile Include="Hubs\NotificationHub.cs" />
     <Compile Include="Migrations\201512140848127_ChangedDatabaseName.cs" />
     <Compile Include="Migrations\201512140848127_ChangedDatabaseName.Designer.cs">
       <DependentUpon>201512140848127_ChangedDatabaseName.cs</DependentUpon>
@@ -190,6 +202,14 @@
     <Compile Include="Migrations\201512200933452_KNSERDB.cs" />
     <Compile Include="Migrations\201512200933452_KNSERDB.Designer.cs">
       <DependentUpon>201512200933452_KNSERDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512231105258_initialNotificationHub.cs" />
+    <Compile Include="Migrations\201512231105258_initialNotificationHub.Designer.cs">
+      <DependentUpon>201512231105258_initialNotificationHub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512240714533_UpdateMembers_isActive.cs" />
+    <Compile Include="Migrations\201512240714533_UpdateMembers_isActive.Designer.cs">
+      <DependentUpon>201512240714533_UpdateMembers_isActive.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Enums.cs" />
@@ -206,6 +226,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -222,6 +243,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512200933452_KNSERDB.resx">
       <DependentUpon>201512200933452_KNSERDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512231105258_initialNotificationHub.resx">
+      <DependentUpon>201512231105258_initialNotificationHub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512240714533_UpdateMembers_isActive.resx">
+      <DependentUpon>201512240714533_UpdateMembers_isActive.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
