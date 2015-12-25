@@ -52,7 +52,7 @@ function LetterController($scope, $http) {
         $scope.addMode = !$scope.addMode;
     };
 
-    // insert student
+    // insert letter
     $scope.add = function () {
         $scope.loading = true;
         $http.post('http://localhost:8248/api/Letter/Create', this.newLetter)
@@ -129,3 +129,48 @@ app.controller('memberController', function ($scope, $http) {
     };
 
 });
+
+
+
+app.controller('RequestController', ['$scope', '$http', RequestController]);
+
+function RequestController($scope, $http) {
+    $scope.loading = true;
+    $scope.addMode = false;
+    $scope.viewMode = false;
+    $scope.status = "text-danger";
+
+    // get all letter
+    $http.get("http://localhost:8248/api/Requests/Get").success(function (data, status, headers, config) {
+        $scope.requests = data;
+        $scope.loading = false;
+    })
+    .error(function () {
+        $scope.error = "An Error has occured while loading posts!";
+        $scope.loading = false;
+    });
+    
+
+    // approval 
+    $scope.approval = function () {
+        alert("Edit");
+        $scope.loading = true;
+        var frien = this.request;
+        frien.approval = true;
+        alert(frien);
+        $http.put('http://localhost:8248/api/Requests/' + frien.$id, frien).success(function (data) {
+            alert("Saved Successfully!!");
+            frien.editMode = false;
+            $scope.loading = false;
+        }).error(function (data) {
+            $scope.error = "An Error has occured while Saving Student! " + data;
+            $scope.loading = false;
+        });
+    };
+
+    // update
+
+    $scope.cancel = function () {
+        alert("Huy");
+    };
+}

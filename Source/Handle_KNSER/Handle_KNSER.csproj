@@ -216,6 +216,10 @@
     <Compile Include="Migrations\201512250920231_UserId_Members.Designer.cs">
       <DependentUpon>201512250920231_UserId_Members.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512251647037_Approval_Requests.cs" />
+    <Compile Include="Migrations\201512251647037_Approval_Requests.Designer.cs">
+      <DependentUpon>201512251647037_Approval_Requests.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\ExternalLoginModels.cs" />
@@ -257,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512250920231_UserId_Members.resx">
       <DependentUpon>201512250920231_UserId_Members.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512251647037_Approval_Requests.resx">
+      <DependentUpon>201512251647037_Approval_Requests.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

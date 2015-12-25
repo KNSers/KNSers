@@ -202,3 +202,4 @@ E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\bin\Microsoft.AspNet.SignalR.
 E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.initialNotificationHub.resources
 E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.UpdateMembers_isActive.resources
 E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.UserId_Members.resources
+E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.Approval_Requests.resources
