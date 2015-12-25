@@ -181,6 +181,7 @@
     <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\RefreshTokensController.cs" />
+    <Compile Include="Controllers\RequestsController.cs" />
     <Compile Include="Controllers\RssFeedController.cs" />
     <Compile Include="Entities\Client.cs" />
     <Compile Include="Entities\Event.cs" />
@@ -210,6 +211,10 @@
     <Compile Include="Migrations\201512240714533_UpdateMembers_isActive.cs" />
     <Compile Include="Migrations\201512240714533_UpdateMembers_isActive.Designer.cs">
       <DependentUpon>201512240714533_UpdateMembers_isActive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512250920231_UserId_Members.cs" />
+    <Compile Include="Migrations\201512250920231_UserId_Members.Designer.cs">
+      <DependentUpon>201512250920231_UserId_Members.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Enums.cs" />
@@ -249,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512240714533_UpdateMembers_isActive.resx">
       <DependentUpon>201512240714533_UpdateMembers_isActive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512250920231_UserId_Members.resx">
+      <DependentUpon>201512250920231_UserId_Members.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

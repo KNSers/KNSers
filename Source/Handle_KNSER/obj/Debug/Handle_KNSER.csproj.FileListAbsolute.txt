@@ -195,3 +195,10 @@ D:\Learning\KNSers\Source\Handle_KNSER\bin\Microsoft.AspNet.SignalR.Core.xml
 D:\Learning\KNSers\Source\Handle_KNSER\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
 D:\Learning\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.initialNotificationHub.resources
 D:\Learning\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.UpdateMembers_isActive.resources
+E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\bin\Microsoft.AspNet.SignalR.Core.dll
+E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\bin\Microsoft.AspNet.SignalR.Core.xml
+E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.initialNotificationHub.resources
+E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.UpdateMembers_isActive.resources
+E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.UserId_Members.resources

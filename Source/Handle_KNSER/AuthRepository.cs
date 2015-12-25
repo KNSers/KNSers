@@ -18,11 +18,14 @@ namespace Handle_KNSER
         private AuthContext _ctx;
 
         private UserManager<IdentityUser> _userManager;
-
+        private RoleManager<IdentityRole> _roleManager;
         public AuthRepository()
         {
             _ctx = new AuthContext();
             _userManager = new UserManager<IdentityUser>(new UserStore<IdentityUser>(_ctx));
+            _roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(_ctx));
+            //_userroleManager = new UserManager<IdentityUserRole>();
+            
         }
 
         public async Task<IdentityResult> RegisterUser(UserModel userModel)
@@ -33,6 +36,9 @@ namespace Handle_KNSER
             };
 
             var result = await _userManager.CreateAsync(user, userModel.Password);
+            await _userManager.AddToRoleAsync(user.Id, "User");
+            
+
             return result;
         }
 
@@ -127,7 +133,6 @@ namespace Handle_KNSER
         public async Task<IdentityResult> AddLoginAsync(string userId, UserLoginInfo login)
         {
             var result = await _userManager.AddLoginAsync(userId, login);
-
             return result;
         }
 

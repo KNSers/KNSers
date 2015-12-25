@@ -21,5 +21,22 @@ namespace Handle_KNSER.Controllers
             listLetters = _repo.Letters.ToList();
             return listLetters;
         }
+
+        [HttpPost]
+        public HttpResponseMessage Post(Request request)
+        {
+            if (ModelState.IsValid)
+            {
+                _repo.Requests.Add(request);
+                _repo.SaveChanges();
+                HttpResponseMessage reponse = Request.CreateResponse(HttpStatusCode.Created, request);
+                reponse.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = request.MemberId }));
+                return reponse;
+            }
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
+        }
     }
 }

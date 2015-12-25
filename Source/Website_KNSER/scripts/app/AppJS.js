@@ -17,6 +17,7 @@ function RssEventController($scope, $http) {
         $scope.title = "Oops... something went wrong";
         $scope.working = false;
     });
+
 }
 
 
@@ -29,7 +30,7 @@ function LetterController($scope, $http) {
     $scope.viewMode = false;
 
 
-    // get all student
+    // get all letter
     $http.get("http://localhost:8248/api/Letter/get").success(function (data, status, headers, config) {
         $scope.letters = data;
         $scope.loading = false;
@@ -54,55 +55,55 @@ function LetterController($scope, $http) {
     // insert student
     $scope.add = function () {
         $scope.loading = true;
-        $http.post('http://localhost:2371/api/StudentApi', this.newstudent)
+        $http.post('http://localhost:8248/api/Letter/Create', this.newLetter)
             .success(function (data) {
-                alert("Add Successfully!");
+                alert("Hoàn tất");
                 $scope.addMode = false;
-                $scope.students.push(data);
+                $scope.letters.push(data);
                 $scope.loading = false;
             })
             .error(function (data) {
-                $scope.error = "An Error has occured while Adding Student! " + data;
+                $scope.error = "Xảy ra lỗi trong quá trình tạo đơn " + data;
                 $scope.loading = false;
             });
     };
 
-    //Delete Student
-    $scope.deletestudent = function () {
-        $scope.loading = true;
-        var Id = this.student.StudentId;
-        $http.delete('http://localhost:2371/api/student/delete/?id=' + Id).success(function (data) {
-            alert("Deleted Successfully!!");
-            $.each($scope.students, function (i) {
-                if ($scope.students[i].StudentId === Id) {
-                    $scope.students.splice(i, 1);
-                    return false;
-                }
-            });
-            $scope.loading = false;
-        }).error(function (data) {
-            $scope.error = "An Error has occured while Saving Student! " + data;
-            $scope.loading = false;
+    ////Delete Student
+    //$scope.deleteletter = function () {
+    //    $scope.loading = true;
+    //    var Id = this.student.StudentId;
+    //    $http.delete('http://localhost:2371/api/student/delete/?id=' + Id).success(function (data) {
+    //        alert("Deleted Successfully!!");
+    //        $.each($scope.students, function (i) {
+    //            if ($scope.students[i].StudentId === Id) {
+    //                $scope.students.splice(i, 1);
+    //                return false;
+    //            }
+    //        });
+    //        $scope.loading = false;
+    //    }).error(function (data) {
+    //        $scope.error = "An Error has occured while Saving Student! " + data;
+    //        $scope.loading = false;
 
-        });
-    };
+    //    });
+    //};
 
 
-    //Edit Student
-    $scope.save = function () {
-        alert("Edit");
-        $scope.loading = true;
-        var frien = this.student;
-        alert(frien);
-        $http.put('http://localhost:2371/api/StudentApi/' + frien.StudentId, frien).success(function (data) {
-            alert("Saved Successfully!!");
-            frien.editMode = false;
-            $scope.loading = false;
-        }).error(function (data) {
-            $scope.error = "An Error has occured while Saving Student! " + data;
-            $scope.loading = false;
-        });
-    };
+    ////Edit Student
+    //$scope.save = function () {
+    //    alert("Edit");
+    //    $scope.loading = true;
+    //    var frien = this.student;
+    //    alert(frien);
+    //    $http.put('http://localhost:2371/api/StudentApi/' + frien.StudentId, frien).success(function (data) {
+    //        alert("Saved Successfully!!");
+    //        frien.editMode = false;
+    //        $scope.loading = false;
+    //    }).error(function (data) {
+    //        $scope.error = "An Error has occured while Saving Student! " + data;
+    //        $scope.loading = false;
+    //    });
+    //};
 }
 
 //member
