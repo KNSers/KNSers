@@ -13,5 +13,10 @@ namespace Website_KNSER.Controllers
         {
             return View();
         }
+
+        public ActionResult Index()
+        {
+            return View();
+        }
     }
 }

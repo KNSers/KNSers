@@ -42,9 +42,13 @@ namespace Handle_KNSER.Controllers
             {
                 return BadRequest(ModelState);
             }
-
+            
             IdentityResult result = await _repo.RegisterUser(userModel);
-
+            
+            if (result.Succeeded)
+            {
+                
+            }
             IHttpActionResult errorResult = GetErrorResult(result);
 
             if (errorResult != null)

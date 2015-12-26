@@ -131,8 +131,6 @@
     <Content Include="app\views\signup.html" />
     <Content Include="app\views\tokens.html" />
     <Content Include="authComplete.html" />
-    <Content Include="content\bootstrap.css" />
-    <Content Include="content\bootstrap.min.css" />
     <Content Include="content\css\bootstrap.min.css" />
     <Content Include="content\css\font-awesome.min.css" />
     <Content Include="content\css\loading-bar.css" />
@@ -951,7 +949,11 @@
     <Content Include="Views\Error\PageNotFound.cshtml" />
     <Content Include="Views\Request\Create.cshtml" />
     <Content Include="Views\Member\Index.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Noti\Index.cshtml" />
+=======
+    <Content Include="Views\Request\Index.cshtml" />
+>>>>>>> origin/master
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
