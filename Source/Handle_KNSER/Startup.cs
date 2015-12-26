@@ -1,5 +1,7 @@
 ﻿using Handle_KNSER.Providers;
+using Microsoft.AspNet.SignalR;
 using Microsoft.Owin;
+using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.Facebook;
 using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
@@ -31,7 +33,13 @@ namespace Handle_KNSER
             app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
             app.UseWebApi(config);
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<AuthContext, Handle_KNSER.Migrations.Configuration>());
-
+            
+            //signalr specify custom URL
+            var hubConfiguration = new HubConfiguration();
+            hubConfiguration.EnableDetailedErrors = true;
+            hubConfiguration.EnableJavaScriptProxies = false;
+            app.MapSignalR("/signalr", hubConfiguration);
+            //app.MapSignalR("/signalr", new HubConfiguration());
         }
 
         public void ConfigureOAuth(IAppBuilder app)
