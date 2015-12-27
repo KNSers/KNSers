@@ -948,7 +948,11 @@
     <Content Include="Views\Error\PageNotFound.cshtml" />
     <Content Include="Views\Request\Create.cshtml" />
     <Content Include="Views\Member\Index.cshtml" />
+<<<<<<< HEAD
+    <Content Include="Views\Noti\Index.cshtml" />
+=======
     <Content Include="Views\Request\Index.cshtml" />
+>>>>>>> origin/master
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
