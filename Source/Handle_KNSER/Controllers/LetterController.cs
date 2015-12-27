@@ -1,6 +1,7 @@
 ﻿using Handle_KNSER.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -23,20 +24,23 @@ namespace Handle_KNSER.Controllers
         }
 
         [HttpPost]
+        [Route("api/Letter/Create")]
         public HttpResponseMessage Post(Request request)
         {
             if (ModelState.IsValid)
             {
                 _repo.Requests.Add(request);
-                _repo.SaveChanges();
-                HttpResponseMessage reponse = Request.CreateResponse(HttpStatusCode.Created, request);
-                reponse.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = request.MemberId }));
-                return reponse;
             }
-            else
+
+            try
             {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                _repo.SaveChanges();
             }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
+            }
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }

@@ -13,6 +13,7 @@ using System.Web.Http.Cors;
 namespace Handle_KNSER.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
+    //[RoutePrefix("api/Requests")]
     public class RequestsController : ApiController
     {
 

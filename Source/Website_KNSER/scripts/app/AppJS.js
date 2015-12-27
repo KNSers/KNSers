@@ -28,7 +28,7 @@ function LetterController($scope, $http) {
     $scope.loading = true;
     $scope.addMode = false;
     $scope.viewMode = false;
-
+    $scope.data.letterid = null;
 
     // get all letter
     $http.get("http://localhost:8248/api/Letter/get").success(function (data, status, headers, config) {
@@ -55,7 +55,11 @@ function LetterController($scope, $http) {
     // insert letter
     $scope.add = function () {
         $scope.loading = true;
-        $http.post('http://localhost:8248/api/Letter/Create', this.newLetter)
+        alert('aa');
+        alert(data.letterid);
+        //this.NewRequest.letterid = letterid;
+        //alert(this.NewRequest.letterid);
+        $http.post('http://localhost:8248/api/Letter/Create', this.NewRequest)
             .success(function (data) {
                 alert("Hoàn tất");
                 $scope.addMode = false;
@@ -138,8 +142,11 @@ function RequestController($scope, $http) {
     $scope.loading = true;
     $scope.addMode = false;
     $scope.viewMode = false;
+    $scope.disable = false;
     $scope.status = "text-danger";
-
+    $scope.ApprovalStatus = false;
+    $scope.name = '';
+    
     // get all letter
     $http.get("http://localhost:8248/api/Requests/Get").success(function (data, status, headers, config) {
         $scope.requests = data;
@@ -153,24 +160,33 @@ function RequestController($scope, $http) {
 
     // approval 
     $scope.approval = function () {
-        alert("Edit");
         $scope.loading = true;
         var frien = this.request;
         frien.approval = true;
         alert(frien);
-        $http.put('http://localhost:8248/api/Requests/' + frien.$id, frien).success(function (data) {
-            alert("Saved Successfully!!");
+        $http.put('http://localhost:8248/api/Requests/' + frien.requestid, frien).success(function (data) {
+            $scope.ApprovalStatus = true;
             frien.editMode = false;
             $scope.loading = false;
         }).error(function (data) {
-            $scope.error = "An Error has occured while Saving Student! " + data;
+            $scope.ApprovalStatus = "Xảy ra lỗi trong quá trình duyệt đơn " + data;
             $scope.loading = false;
         });
     };
 
-    // update
-
+    // cancel approval
     $scope.cancel = function () {
-        alert("Huy");
+        $scope.loading = true;
+        var frien = this.request;
+        frien.approval = false;
+        alert(frien);
+        $http.put('http://localhost:8248/api/Requests/' + frien.requestid, frien).success(function (data) {
+            $scope.ApprovalStatus = true;
+            frien.editMode = false;
+            $scope.loading = false;
+        }).error(function (data) {
+            $scope.ApprovalStatus = "Xảy ra lỗi trong quá trình duyệt đơn " + data;
+            $scope.loading = false;
+        });
     };
 }

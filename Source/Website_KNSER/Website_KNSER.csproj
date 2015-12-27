@@ -90,7 +90,6 @@
     <Content Include="content\css\bootstrap-combined.min.css" />
     <Content Include="content\css\bootstrap-datetimepicker.min.css" />
     <Content Include="content\css\bootstrap.css" />
-    <Content Include="datetime.html" />
     <Content Include="scripts\angular-animate.js" />
     <Content Include="scripts\angular-animate.min.js" />
     <Content Include="scripts\angular-aria.js" />
