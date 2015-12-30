@@ -2,6 +2,10 @@
 //var app = angular.module('RssFeed', [])
 
 var app = angular.module('App', [])
+
+//var serviceBase = 'http://localhost:8248/';
+var serviceBase = 'http://knsersbackend.apphb.com/';
+
 app.controller('RssEventController', ['$scope', '$http', RssEventController]);
 
 function RssEventController($scope, $http) {
@@ -10,7 +14,7 @@ function RssEventController($scope, $http) {
     $scope.correctAnswer = false;
     $scope.working = false;
 
-    $http.get("http://localhost:8248/api/RssFeed/rss").success(function (data, status, headers, config) {
+    $http.get(serviceBase + "api/RssFeed/rss").success(function (data, status, headers, config) {
         $scope.options = data;
         $scope.title = "Rss FIT";
     }).error(function (data, status, headers, config) {
@@ -31,7 +35,7 @@ function LetterController($scope, $http) {
     $scope.data.letterid = null;
 
     // get all letter
-    $http.get("http://localhost:8248/api/Letter/get").success(function (data, status, headers, config) {
+    $http.get(serviceBase + "api/Letter/get").success(function (data, status, headers, config) {
         $scope.letters = data;
         $scope.loading = false;
     })
@@ -59,7 +63,7 @@ function LetterController($scope, $http) {
         alert(data.letterid);
         //this.NewRequest.letterid = letterid;
         //alert(this.NewRequest.letterid);
-        $http.post('http://localhost:8248/api/Letter/Create', this.NewRequest)
+        $http.post(serviceBase + 'api/Letter/Create', this.NewRequest)
             .success(function (data) {
                 alert("Hoàn tất");
                 $scope.addMode = false;
@@ -115,7 +119,7 @@ app.controller('memberController', function ($scope, $http) {
     $scope.loading = true;
     $scope.addMode = false;
 
-    $http.get("http://localhost:8248/api/members").success(function (data) {
+    $http.get(serviceBase + "api/members").success(function (data) {
         $scope.members = data;
         $scope.loading = false;
     })
@@ -148,7 +152,7 @@ function RequestController($scope, $http) {
     $scope.name = '';
     
     // get all letter
-    $http.get("http://localhost:8248/api/Requests/Get").success(function (data, status, headers, config) {
+    $http.get(serviceBase + "api/Requests/Get").success(function (data, status, headers, config) {
         $scope.requests = data;
         $scope.loading = false;
     })
@@ -164,7 +168,7 @@ function RequestController($scope, $http) {
         var frien = this.request;
         frien.approval = true;
         alert(frien);
-        $http.put('http://localhost:8248/api/Requests/' + frien.requestid, frien).success(function (data) {
+        $http.put(serviceBase + 'api/Requests/' + frien.requestid, frien).success(function (data) {
             $scope.ApprovalStatus = true;
             frien.editMode = false;
             $scope.loading = false;
@@ -180,7 +184,7 @@ function RequestController($scope, $http) {
         var frien = this.request;
         frien.approval = false;
         alert(frien);
-        $http.put('http://localhost:8248/api/Requests/' + frien.requestid, frien).success(function (data) {
+        $http.put(serviceBase + 'api/Requests/' + frien.requestid, frien).success(function (data) {
             $scope.ApprovalStatus = true;
             frien.editMode = false;
             $scope.loading = false;
