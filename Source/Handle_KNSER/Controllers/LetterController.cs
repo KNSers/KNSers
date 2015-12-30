@@ -1,4 +1,5 @@
 ﻿using Handle_KNSER.Entities;
+using Handle_KNSER.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
@@ -25,20 +26,26 @@ namespace Handle_KNSER.Controllers
 
         [HttpPost]
         [Route("api/Letter/Create")]
-        public HttpResponseMessage Post(Request request)
+        public HttpResponseMessage Post([FromBody]LetterRequest request)
         {
             if (ModelState.IsValid)
             {
-                _repo.Requests.Add(request);
-            }
-
-            try
-            {
-                _repo.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException ex)
-            {
-                return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
+                var _MemberId = _repo.Members.SingleOrDefault(s => s.KNSId == request.MemberId);
+                if (_MemberId == null)
+                {
+                    return Request.CreateResponse(HttpStatusCode.NotFound);
+                }
+                else
+                {
+                    Entities.Request req = new Request();
+                    req.MemberId = _MemberId.MemberId;
+                    req.LetterId = request.LetterId;
+                    req.Reason = request.Reason;
+                    req.StartDate = DateTime.Now;
+                    req.EndDate = DateTime.Now;
+                    _repo.Requests.Add(req);
+                    _repo.SaveChanges();
+                }
             }
             return Request.CreateResponse(HttpStatusCode.OK);
         }

@@ -3,8 +3,8 @@
 
 var app = angular.module('App', [])
 
-//var serviceBase = 'http://localhost:8248/';
-var serviceBase = 'http://knsersbackend.apphb.com/';
+var serviceBase = 'http://localhost:8248/';
+//var serviceBase = 'http://knsersbackend.apphb.com/';
 
 app.controller('RssEventController', ['$scope', '$http', RssEventController]);
 
@@ -31,8 +31,10 @@ app.controller('LetterController', ['$scope', '$http', LetterController]);
 function LetterController($scope, $http) {
     $scope.loading = true;
     $scope.addMode = false;
-    $scope.viewMode = false;
-    $scope.data.letterid = null;
+    $scope.buttonmode = true;
+    $scope.enddatemode = false;
+    $scope.LetterIdSelected = '1';
+    //$scope.data.letterid = null;
 
     // get all letter
     $http.get(serviceBase + "api/Letter/get").success(function (data, status, headers, config) {
@@ -56,13 +58,21 @@ function LetterController($scope, $http) {
         $scope.addMode = !$scope.addMode;
     };
 
+    $scope.changedValue = function (item) {
+        if (item.letterId == '2') {
+            $scope.enddatemode = true;
+        }
+        else {
+            $scope.enddatemode = false;
+        }
+        $scope.buttonmode = false;
+        $scope.LetterIdSelected = item.letterId;
+    }
     // insert letter
     $scope.add = function () {
         $scope.loading = true;
-        alert('aa');
-        alert(data.letterid);
-        //this.NewRequest.letterid = letterid;
-        //alert(this.NewRequest.letterid);
+        this.NewRequest.LetterId = $scope.LetterIdSelected;
+        //alert(this.NewRequest.LetterId);
         $http.post(serviceBase + 'api/Letter/Create', this.NewRequest)
             .success(function (data) {
                 alert("Hoàn tất");
@@ -73,6 +83,7 @@ function LetterController($scope, $http) {
             .error(function (data) {
                 $scope.error = "Xảy ra lỗi trong quá trình tạo đơn " + data;
                 $scope.loading = false;
+                alert("Lỗi");
             });
     };
 

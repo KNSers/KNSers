@@ -220,10 +220,15 @@
     <Compile Include="Migrations\201512251647037_Approval_Requests.Designer.cs">
       <DependentUpon>201512251647037_Approval_Requests.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512301926135_changeRequest_DB.cs" />
+    <Compile Include="Migrations\201512301926135_changeRequest_DB.Designer.cs">
+      <DependentUpon>201512301926135_changeRequest_DB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\ExternalLoginModels.cs" />
     <Compile Include="Models\InfomationModel.cs" />
+    <Compile Include="Models\LetterRequest.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\FacebookAuthProvider.cs" />
@@ -264,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512251647037_Approval_Requests.resx">
       <DependentUpon>201512251647037_Approval_Requests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512301926135_changeRequest_DB.resx">
+      <DependentUpon>201512301926135_changeRequest_DB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

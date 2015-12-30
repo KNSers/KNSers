@@ -28,8 +28,8 @@ namespace Handle_KNSER.Controllers
             {
 
                 var query = from member in _repo.Members
-                             join request in _repo.Requests on member.MemberId equals request.MemberId.MemberId
-                             join letter in _repo.Letters on request.LetterId.LetterId equals letter.LetterId
+                             join request in _repo.Requests on member.MemberId equals request.MemberId
+                             join letter in _repo.Letters on request.LetterId equals letter.LetterId
                              select new 
                              {
                                  requestid = request.RequestId,
@@ -71,7 +71,6 @@ namespace Handle_KNSER.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
             }
             return Request.CreateResponse(HttpStatusCode.OK);
-            //return Request.CreateResponse(HttpStatusCode.OK, request.MemberId);
         }
     }
 }
