@@ -26,7 +26,7 @@ app.controller('signupController', ['$scope', '$location', '$timeout', 'authServ
                      errors.push(response.data.modelState[key][i]);
                  }
              }
-             $scope.message = "Đăng nhập thất bại." + errors.join(' ');
+             $scope.message = "Đăng ký thất bại." + errors.join(' ');
          });
     };
 

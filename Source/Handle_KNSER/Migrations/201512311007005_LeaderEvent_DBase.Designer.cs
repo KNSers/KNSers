@@ -7,13 +7,13 @@ namespace Handle_KNSER.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class changeRequest_DB : IMigrationMetadata
+    public sealed partial class LeaderEvent_DBase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(changeRequest_DB));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(LeaderEvent_DBase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201512301926135_changeRequest_DB"; }
+            get { return "201512311007005_LeaderEvent_DBase"; }
         }
         
         string IMigrationMetadata.Source

@@ -80,13 +80,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="activity.html" />
     <Content Include="app\app.js" />
+    <Content Include="app\controllers\activityController.js" />
     <Content Include="app\controllers\associateController.js" />
+    <Content Include="app\controllers\eventsController.js" />
     <Content Include="app\controllers\homeController.js" />
     <Content Include="app\controllers\indexController.js" />
+    <Content Include="app\controllers\lettersController.js" />
     <Content Include="app\controllers\loginController.js" />
     <Content Include="app\controllers\ordersController.js" />
     <Content Include="app\controllers\refreshController.js" />
+    <Content Include="app\controllers\requestsController.js" />
+    <Content Include="app\controllers\rsseventController.js" />
+    <Content Include="app\views\admin\IndexRequest.html" />
+    <Content Include="app\views\user\event.html" />
+    <Content Include="app\views\user\request.html" />
+    <Content Include="app\views\user\rss.html" />
     <Content Include="content\css\bootstrap-combined.min.css" />
     <Content Include="content\css\bootstrap-datetimepicker.min.css" />
     <Content Include="content\css\bootstrap.css" />
@@ -918,6 +928,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\RequestController.cs" />
     <Compile Include="Controllers\RssEventController.cs" />
@@ -950,6 +961,7 @@
     <Content Include="Views\Member\Index.cshtml" />
     <Content Include="Views\Noti\Index.cshtml" />
     <Content Include="Views\Request\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

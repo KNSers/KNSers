@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" data-collapse="!navbarExpanded">
                 <ul class="nav navbar-nav navbar-right">
                     <li data-ng-hide="!authentication.isAuth"><a href="#">Chào mừng {{authentication.userName}}!</a></li>
-                    <li data-ng-hide="!authentication.isAuth"><a href="/Request/Create">CLB chúng ta!</a></li>
+                    <li data-ng-hide="!authentication.isAuth"><a href="activity.html">CLB chúng ta!</a></li>
                     <li data-ng-hide="!authentication.isAuth"><a href="#/refresh">Refresh Token</a></li>
                     <li data-ng-hide="!authentication.isAuth"><a href="" data-ng-click="logOut()">Đăng xuất</a></li>
                     <li data-ng-hide="authentication.isAuth"> <a href="#/login">Đăng nhập</a></li>
@@ -72,6 +72,7 @@
     <script src="app/controllers/refreshController.js?v=2"></script>
     <script src="app/controllers/tokensManagerController.js?v=2"></script>
     <script src="app/controllers/associateController.js?v=2"></script>
+    <script src="app/controllers/lettersController.js?v=2"></script>
     <!-- Load custom filters -->
     <!-- Load custom directives -->
 

@@ -16,6 +16,7 @@ namespace Handle_KNSER.Controllers
         //public AngularJSAuthesEntities _db = new AngularJSAuthesEntities();
         // GET: api/Members
 
+        [Authorize]
         [HttpGet]
         public List<Letter> Get()
         {

@@ -203,4 +203,9 @@ E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrat
 E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.UpdateMembers_isActive.resources
 E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.UserId_Members.resources
 E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.Approval_Requests.resources
-E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.changeRequest_DB.resources
+E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.LeaderEvent_DBase.resources
+E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.Event_Member.resources
+E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.Event_Member_id.resources
+E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.Event_Member_change.resources
+E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.Member_Leader.resources
+E:\Project KNSer\Member\KNSers\Source\Handle_KNSER\obj\Debug\Handle_KNSER.Migrations.EventDB.resources

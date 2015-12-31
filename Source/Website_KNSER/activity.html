@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="AngularAuthApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý thành viên CLB</title>
+    <link href="content/css/bootstrap.css" rel="stylesheet" />
+    <link href="content/Site.css" rel="stylesheet" />
+    <link href="content/css/loading-bar.min.css" rel="stylesheet" />
+    <link href="content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="content/css/social-buttons.css" rel="stylesheet" />
+    <script src="scripts/modernizr-2.6.2.js"></script>
+    <link href="content/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="content/css/bootstrap-combined.min.css" rel="stylesheet" />
+    <script src="scripts/jquery-1.10.2.min.js"></script>
+    
+</head>
+
+
+<nav class="navbar navbar-default" data-ng-controller="indexController">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="activity.html">KNS</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav" id="navigation-bar">
+                <li class="" id="gui-don-xin-phep"><a href="#/user/request">Gửi đơn xin phép<span class="sr-only">(current)</span></a></li>
+                <li class=""><a href="#/user/event">Chương trình</a></li>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Quản lý<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#/user/rss">Chương trình | Sự kiện khác</a></li>
+                        <li><a href="#/user/event">Chương trình CLB</a></li>
+                        <li><a href="#/user/member">Quản lý thành viên</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#/admin/IndexRequest">Quản lý đơn từ</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li data-ng-hide="authentication.isAuth"> <a href="#/login">Đăng nhập</a></li>
+                <li data-ng-hide="authentication.isAuth"> <a href="#/signup">Đăng ký tài khoản</a></li>
+                <li data-ng-hide="!authentication.isAuth"><a href="#">Chào mừng {{authentication.userName}}!</a></li>
+                <li data-ng-hide="!authentication.isAuth"><a href="" data-ng-click="logOut()">Đăng xuất</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<body>
+    <div class="body-content" data-ng-view="">
+        <hr />
+        <footer>
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="text-muted">Created by <a target="_blank" href="https://www.facebook.com/kynangsong.org/?fref=ts">KNSERS</a></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-muted">Developed Team: <a target="_blank" href="#">KNSER</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-local-storage.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+
+
+    <script src="scripts/bootstrap-datetimepicker.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/loading-bar.min.js"></script>
+
+   
+    <!--<script>
+        $('#navigation-bar').on('click', 'li', function () {
+            $('#navigation-bar li.active').removeClass('active');
+            alert("change");
+            $(this).addClass('active');
+        });
+    </script>-->
+
+
+
+    <!--Load main scripts-->
+    <script src="app/app.js?v=2"></script>
+
+
+    <!-- Load services -->
+    <script src="app/services/authInterceptorService.js?v=2"></script>
+    <script src="app/services/authService.js?v=2"></script>
+    <script src="app/services/ordersService.js?v=2"></script>
+    <script src="app/services/tokensManagerService.js?v=2"></script>
+
+    <!--Load controllers-->
+    <script src="app/controllers/indexController.js?v=2"></script>
+    <script src="app/controllers/homeController.js?v=2"></script>
+    <script src="app/controllers/loginController.js?v=2"></script>
+    <script src="app/controllers/signupController.js?v=2"></script>
+    <script src="app/controllers/ordersController.js?v=2"></script>
+    <script src="app/controllers/refreshController.js?v=2"></script>
+    <script src="app/controllers/tokensManagerController.js?v=2"></script>
+    <script src="app/controllers/associateController.js?v=2"></script>
+    <script src="app/controllers/lettersController.js?v=2"></script>
+    <script src="app/controllers/requestsController.js"></script>
+    <script src="app/controllers/rsseventController.js"></script>
+    <script src="app/controllers/eventsController.js"></script>
+</body>
+</html>

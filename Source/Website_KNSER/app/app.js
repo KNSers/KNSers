@@ -38,14 +38,26 @@ app.config(function ($routeProvider) {
         templateUrl: "/app/views/associate.html"
     });
 
-    $routeProvider.when("/RssEvent", {
-        controller: "rssController",
-        templateUrl: "/app/views/associate.html"
+
+    $routeProvider.when("/admin/IndexRequest", {
+        controller: "requestsController",
+        templateUrl: "/app/views/admin/IndexRequest.html"
     });
 
-    $routeProvider.when("/Member", {
-        controller: "memberController",
-        templateUrl: "/app/views/associate.html"
+    $routeProvider.when("/user/request", {
+        controller: "requestsController",
+        controller: "lettersController",
+        templateUrl: "/app/views/user/request.html"
+    });
+
+    $routeProvider.when("/user/rss", {
+        controller: "rsseventController",
+        templateUrl: "/app/views/user/rss.html"
+    });
+
+    $routeProvider.when("/user/event", {
+        controller: "eventsController",
+        templateUrl: "/app/views/user/event.html"
     });
 
 

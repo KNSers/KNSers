@@ -1,0 +1,69 @@
+﻿
+<form class="form-horizontal">
+    <fieldset>
+        <legend class="text-info">Gửi đơn xin phép</legend>
+        <div class="form-group">
+            <label for="textArea" class="col-lg-2 control-label">Mã số thành viên</label>
+            <div class="col-lg-10">
+                <input class="form-control" data-ng-model="NewRequest.MemberId" type="text" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="select" class="col-lg-2 control-label">Loại đơn</label>
+            <div class="col-lg-10">
+                <select ng-options="letter as letter.description for letter in letters track by letter.letterId" class="form-control"
+                        ng-model="selected" ng-change="changedValue(selected)"></select>
+            </div>
+            <input type="hidden" data-ng-model="NewRequest.LetterId">
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Ngày bắt đầu</label>
+            <div id="datetimepickerStart" class="input-append date col-lg-10">
+                <input type="text" data-ng-model="NewRequest.StartDate" class="form-control" id="startdate" data-picker>
+                <input type="hidden" value="">
+                <span class="add-on">
+                    <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="glyphicon glyphicon-calendar"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Ngày kết thúc</label>
+            <div id="datetimepicker" class="input-append date col-lg-10">
+                <input type="text" data-ng-model="NewRequest.StartDate" class="form-control" id="endate" data-picker ng-disabled="enddatemode">
+                <input type="hidden" value="">
+                <span class="add-on">
+                    <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="glyphicon glyphicon-calendar"></i>
+                </span>
+            </div>
+        </div>
+
+
+        <script type="text/javascript">
+                $('#datetimepickerStart').datetimepicker({
+                    format: 'dd/MM/yyyy',
+                    language: 'pt-BR',
+                });
+                $('#datetimepickerEnd').datetimepicker({
+                    format: 'dd/MM/yyyy',
+                    language: 'pt-BR'
+                });
+        </script>
+
+        
+        <div class="form-group">
+            <label for="textArea" class="col-lg-2 control-label">Lý do</label>
+            <div class="col-lg-10">
+                <textarea class="form-control" rows="3" id="textArea" data-ng-model="NewRequest.reason"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="submit" class="btn btn-primary" data-ng-click="add()" ng-disabled="buttonmode">Xác nhận</button>
+                <button type="reset" class="btn btn-default">Hủy bỏ</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

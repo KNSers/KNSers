@@ -1,0 +1,34 @@
+﻿<h2 class="text-info">Danh sách chương trình</h2>
+<div id="index-account">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Tên chương trình</th>
+                <th>Mô tả</th>
+                <th>Ngày bắt đầu</th>
+                <th>Ngày kết thúc</th>
+                <th>Leader</th>
+                <th></th>
+                <th>Người tham gia</th>
+                <th ng-bind-html="myHTML"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="event in events">
+                <td data-ng-show="false" data-ng-model="event.eventName"><span>{{ event.eventId }}</span></td>
+                <td><span data-ng-model="event.description" class="text-primary">[{{event.otherId}}] {{ event.eventName }}</span></td>
+                <td><span data-ng-model="event.description">{{ event.description }}</span></td>
+                <td><span data-ng-model="event.description">{{ event.startdate }}</span></td>
+                <td><span data-ng-model="event.description">{{ event.enddate }}</span></td>
+                <td><span data-ng-model="event.description">{{ event.fullname }}</span></td>
+                <td>
+                </td>
+                <td><a href="" ng-click="openMember(event)">Xem thêm</a></td>
+            </tr>
+            <tr>
+                <td ng-hide="studentmode">dsadsa</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
