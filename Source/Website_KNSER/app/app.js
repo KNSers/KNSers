@@ -66,7 +66,7 @@ app.config(function ($routeProvider) {
     });
 
     $routeProvider.when("/user/eventdetails", {
-        controller: "infoController",
+        controller: "eventdetailsController",
         templateUrl: "/app/views/user/eventdetails.html"
     });
 

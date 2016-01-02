@@ -49,8 +49,16 @@ namespace Handle_KNSER.Controllers
                 var query = _repo.Participants.Where(s => s.Event.EventId == id)
                                  .Select(x => new
                                  {
+                                     x.Event.StartDate,
+                                     x.Event.EventId,
+                                     x.Event.EndDate,
+                                     x.Event.Member.Fullname,
+                                     x.Event.Member.KNSId,
+                                     x.Event.Score,
                                      x.Event.Name,
-                                     x.Member
+                                     x.Event.OtherId,
+                                     x.Member,
+                                     x.PartDate
                                  });
                 if (query == null)
                 {

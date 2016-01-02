@@ -1,50 +1,20 @@
-﻿'use strict'
-var serviceBase = 'http://localhost:8248/';
-//var serviceBase = 'http://knsersbackend.apphb.com/';
-app.controller('eventsController', ['$scope', '$http', EventsController]);
+﻿'use strict';
+app.controller('eventsController', ['$scope', 'eventsService', function ($scope, eventsService) {
 
-//angularjs controller method
-function EventsController($scope, $http) {
-    $scope.loading = true;
-    $scope.studentmode = true;
-    $scope.enddatemode = false;
-    $scope.LetterIdSelected = '1';
-    //$scope.data.letterid = null;
+    $scope.events = [];
+    eventsService.getEvents().then(function (results) {
+        $scope.events = results.data;
 
-    // get all events
-    $http.get(serviceBase + "api/Events/Get").success(function (data, status, headers, config) {
-        $scope.events = data;
-        $scope.loading = false;
-    })
-    .error(function () {
-        $scope.error = "An Error has occured while loading posts!";
-        $scope.loading = false;
+    }, function (error) {
+        alert("Xảy ra lỗi lấy dữ liệu");
     });
-
-    //by pressing toggleEdit button ng-click in html, this method will be hit
-    $scope.toggleEdit = function () {
-        this.student.editMode = !this.student.editMode;
+    $scope.eventdetails = [];
+    $scope.viewDetails = function () {
+        // gắn dữ liệu qua eventService để page eventdetails lấy dữ liệu
+        eventsService.setEventDetails(this.event.eventId);
     };
 
-    $scope.toggleView = function () {
-        this.student.viewMode = !this.student.viewMode;
-    }
-    $scope.toggleAdd = function () {
-        $scope.addMode = !$scope.addMode;
-    };
-
-    $scope.openMember = function () {
-        $scope.studentmode = !$scope.studentmode;
-    };
-
-    // get events details
-    // chưa định nghĩa ID
-    $http.get(serviceBase + "api/Events" + id).success(function (data, status, headers, config) {
-        $scope.events = data;
-        $scope.loading = false;
-    })
-    .error(function () {
-        $scope.error = "An Error has occured while loading posts!";
-        $scope.loading = false;
-    });
-}
+    
+    
+    
+}]);

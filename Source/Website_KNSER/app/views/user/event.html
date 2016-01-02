@@ -9,27 +9,21 @@
                 <th>Ngày kết thúc</th>
                 <th>Leader</th>
                 <th></th>
-                <th>Người tham gia</th>
+                <th></th>
                 <th ng-bind-html="myHTML"></th>
             </tr>
         </thead>
         <tbody>
             <tr data-ng-repeat="event in events">
-                <td data-ng-show="false" data-ng-model="event.eventName"><span>{{ event.eventId }}</span></td>
-                <td><span data-ng-model="event.description" class="text-primary">[{{event.otherId}}] {{ event.eventName }}</span></td>
-                <td><span data-ng-model="event.description">{{ event.description }}</span></td>
-                <td><span data-ng-model="event.description">{{ event.startdate }}</span></td>
-                <td><span data-ng-model="event.description">{{ event.enddate }}</span></td>
-                <td><span data-ng-model="event.description">{{ event.fullname }}</span></td>
+                <td data-ng-show="false" data-ng-model="event.eventid"><span>{{ event.eventId }}</span></td>
+                <td><span class="text-primary">[{{event.otherId}}] {{ event.eventName }}</span></td>
+                <td><span>{{ event.description }}</span></td>
+                <td><span>{{ event.startdate }}</span></td>
+                <td><span>{{ event.enddate }}</span></td>
+                <td><span>{{ event.fullname }}</span></td>
                 <td>
-                    <details>
-                        <summary>xem thêm</summary>
-                    </details>
                 </td>
-                <td><a href="#/user/eventdetails" ng-click="openMember(event)">Xem thêm</a></td>
-            </tr>
-            <tr>
-                <td ng-hide="studentmode">dsadsa</td>
+                <td><a href="#/user/eventdetails" ng-click="viewDetails(event)">Xem thêm</a></td>
             </tr>
         </tbody>
 
