@@ -19,12 +19,15 @@ namespace Handle_KNSER
 
         private UserManager<IdentityUser> _userManager;
         private RoleManager<IdentityRole> _roleManager;
+        //private UserManager<MemberUser> _userInfo;
         public AuthRepository()
         {
             _ctx = new AuthContext();
             _userManager = new UserManager<IdentityUser>(new UserStore<IdentityUser>(_ctx));
             _roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(_ctx));
             //_userroleManager = new UserManager<IdentityUserRole>();
+            //_userInfo = new UserManager<MemberUser>(new UserStore<MemberUser>(_ctx));
+            
             
         }
 
@@ -32,7 +35,7 @@ namespace Handle_KNSER
         {
             IdentityUser user = new IdentityUser
             {
-                UserName = userModel.UserName
+                UserName = userModel.UserName,
             };
 
             var result = await _userManager.CreateAsync(user, userModel.Password);

@@ -60,6 +60,16 @@ app.config(function ($routeProvider) {
         templateUrl: "/app/views/user/event.html"
     });
 
+    $routeProvider.when("/user/infomation", {
+        controller: "infoController",
+        templateUrl: "/app/views/user/infomation.html"
+    });
+
+    $routeProvider.when("/user/eventdetails", {
+        controller: "infoController",
+        templateUrl: "/app/views/user/eventdetails.html"
+    });
+
 
     $routeProvider.otherwise({ redirectTo: "/home" });
 

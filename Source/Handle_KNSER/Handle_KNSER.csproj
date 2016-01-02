@@ -188,6 +188,7 @@
     <Compile Include="Entities\Event.cs" />
     <Compile Include="Entities\Letter.cs" />
     <Compile Include="Entities\Member.cs" />
+    <Compile Include="Entities\MemberUser.cs" />
     <Compile Include="Entities\Notification.cs" />
     <Compile Include="Entities\Participant.cs" />
     <Compile Include="Entities\RefreshToken.cs" />
@@ -244,6 +245,10 @@
     <Compile Include="Migrations\201512311039480_EventDB.cs" />
     <Compile Include="Migrations\201512311039480_EventDB.Designer.cs">
       <DependentUpon>201512311039480_EventDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601020730521_AspUserMember_DB.cs" />
+    <Compile Include="Migrations\201601020730521_AspUserMember_DB.Designer.cs">
+      <DependentUpon>201601020730521_AspUserMember_DB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Enums.cs" />
@@ -308,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512311039480_EventDB.resx">
       <DependentUpon>201512311039480_EventDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601020730521_AspUserMember_DB.resx">
+      <DependentUpon>201601020730521_AspUserMember_DB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

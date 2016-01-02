@@ -28,9 +28,10 @@ function RequestController($scope, $http) {
         $scope.loading = true;
         var frien = this.request;
         frien.approval = true;
-        alert(frien);
+        
         $http.put(serviceBase + 'api/Requests/' + frien.requestid, frien).success(function (data) {
             $scope.ApprovalStatus = true;
+            alert("Đã duyệt đơn bạn " + frien.fullname);
             frien.editMode = false;
             $scope.loading = false;
         }).error(function (data) {
@@ -44,9 +45,9 @@ function RequestController($scope, $http) {
         $scope.loading = true;
         var frien = this.request;
         frien.approval = false;
-        alert(frien);
         $http.put(serviceBase + 'api/Requests/' + frien.requestid, frien).success(function (data) {
             $scope.ApprovalStatus = true;
+            alert("Đã hủy duyệt đơn bạn " + frien.fullname);
             frien.editMode = false;
             $scope.loading = false;
         }).error(function (data) {

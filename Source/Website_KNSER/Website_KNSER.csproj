@@ -87,6 +87,7 @@
     <Content Include="app\controllers\eventsController.js" />
     <Content Include="app\controllers\homeController.js" />
     <Content Include="app\controllers\indexController.js" />
+    <Content Include="app\controllers\infoController.js" />
     <Content Include="app\controllers\lettersController.js" />
     <Content Include="app\controllers\loginController.js" />
     <Content Include="app\controllers\ordersController.js" />
@@ -95,6 +96,8 @@
     <Content Include="app\controllers\rsseventController.js" />
     <Content Include="app\views\admin\IndexRequest.html" />
     <Content Include="app\views\user\event.html" />
+    <Content Include="app\views\user\eventdetails.html" />
+    <Content Include="app\views\user\infomation.html" />
     <Content Include="app\views\user\request.html" />
     <Content Include="app\views\user\rss.html" />
     <Content Include="content\css\bootstrap-combined.min.css" />

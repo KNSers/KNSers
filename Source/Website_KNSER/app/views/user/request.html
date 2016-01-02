@@ -3,12 +3,6 @@
     <fieldset>
         <legend class="text-info">Gửi đơn xin phép</legend>
         <div class="form-group">
-            <label for="textArea" class="col-lg-2 control-label">Mã số thành viên</label>
-            <div class="col-lg-10">
-                <input class="form-control" data-ng-model="NewRequest.MemberId" type="text" />
-            </div>
-        </div>
-        <div class="form-group">
             <label for="select" class="col-lg-2 control-label">Loại đơn</label>
             <div class="col-lg-10">
                 <select ng-options="letter as letter.description for letter in letters track by letter.letterId" class="form-control"
@@ -30,8 +24,8 @@
 
         <div class="form-group">
             <label class="col-lg-2 control-label">Ngày kết thúc</label>
-            <div id="datetimepicker" class="input-append date col-lg-10">
-                <input type="text" data-ng-model="NewRequest.StartDate" class="form-control" id="endate" data-picker ng-disabled="enddatemode">
+            <div id="datetimepickerEnd" class="input-append date col-lg-10">
+                <input type="text" data-ng-model="NewRequest.EndDate" class="form-control" id="endate" data-picker ng-disabled="enddatemode">
                 <input type="hidden" value="">
                 <span class="add-on">
                     <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="glyphicon glyphicon-calendar"></i>

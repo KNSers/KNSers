@@ -13,7 +13,7 @@ function LetterController($scope, $http) {
     //$scope.data.letterid = null;
 
     // get all letter
-    $http.get(serviceBase + "api/Letter/get").success(function (data, status, headers, config) {
+    $http.get(serviceBase + "api/Letter/Get").success(function (data, status, headers, config) {
         $scope.letters = data;
         $scope.loading = false;
     })
@@ -49,7 +49,7 @@ function LetterController($scope, $http) {
     $scope.add = function () {
         $scope.loading = true;
         this.NewRequest.LetterId = $scope.LetterIdSelected;
-        //alert(this.NewRequest.LetterId);
+        alert(this.NewRequest.startdate);
         $http.post(serviceBase + 'api/Letter/Create', this.NewRequest)
             .success(function (data) {
                 alert("Hoàn tất");

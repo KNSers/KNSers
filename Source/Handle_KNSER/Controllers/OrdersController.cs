@@ -18,11 +18,11 @@ namespace Handle_KNSER.Controllers
             ClaimsPrincipal principal = Request.GetRequestContext().Principal as ClaimsPrincipal;
 
             var Name = ClaimsPrincipal.Current.Identity.Name;
-            var Name1 = User.Identity.Name;
+            //var Name1 = User.Identity.Get;
 
             var userName = principal.Claims.Where(c => c.Type == "sub").Single().Value;
 
-            return Ok(Order.CreateOrders());
+            return Ok(Name);
         }
 
     }

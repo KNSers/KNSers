@@ -7,7 +7,7 @@
         <table class="table table-striped table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>Order ID</th>
+                    <th>Order ID {{order.Name}}</th>
                     <th>Customer</th>
                     <th>City</th>
                     <th>Shipped</th>
@@ -16,7 +16,7 @@
             <tbody>
                 <tr data-ng-repeat="order in orders">
                     <td>
-                        {{ order.orderID }}
+                        {{ order.orderID }} 
                     </td>
                     <td>
                         {{ order.customerName }}

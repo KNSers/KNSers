@@ -13,7 +13,8 @@ namespace Handle_KNSER
         public AuthContext()
             : base("KNSERDB")
         {
-
+            Configuration.LazyLoadingEnabled = false;
+            Configuration.ProxyCreationEnabled = false;
         }
 
         public DbSet<Client> Clients { get; set; }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Handle_KNSER.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -38,6 +39,27 @@ namespace Handle_KNSER.Controllers
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
             }
+        }
+
+        [HttpGet]
+        [Route("api/Events/GetDetails")]
+        public HttpResponseMessage getDetails(string id)
+        {
+            Event ev = new Event();
+            if (ModelState.IsValid)
+            {
+                int Id = int.Parse(id);
+                ev = _repo.Events.SingleOrDefault(s => s.EventId == Id);
+
+                if (ev == null)
+                {
+                    return Request.CreateResponse(HttpStatusCode.NotFound);
+                }
+            }
+
+            return Request.CreateResponse(HttpStatusCode.OK, ev);
+
+            
         }
 
     }

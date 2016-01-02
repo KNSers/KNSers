@@ -29,11 +29,10 @@
             </button>
             <a class="navbar-brand" href="activity.html">KNS</a>
         </div>
-
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav" id="navigation-bar">
-                <li class="" id="gui-don-xin-phep"><a href="#/user/request">Gửi đơn xin phép<span class="sr-only">(current)</span></a></li>
-                <li class=""><a href="#/user/event">Chương trình</a></li>
+                <li id="gui-don-xin-phep"><a href="#/user/request"><span ng-class="{active : index == selectedIndex}" ng-click="itemClicked($index)">Gửi đơn xin phép</span></a></li>
+                <li id="chuong-trinh"><a href="#/user/event"><span ng-class="{active : index == selectedIndex}" ng-click="itemClicked($index)">Chương trình</span></a></li>
                 <li class="dropdown">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Quản lý<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
@@ -56,7 +55,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li data-ng-hide="authentication.isAuth"> <a href="#/login">Đăng nhập</a></li>
                 <li data-ng-hide="authentication.isAuth"> <a href="#/signup">Đăng ký tài khoản</a></li>
-                <li data-ng-hide="!authentication.isAuth"><a href="#">Chào mừng {{authentication.userName}}!</a></li>
+                <li data-ng-hide="!authentication.isAuth"><a href="#/user/infomation">Chào mừng {{authentication.userName}}!</a></li>
                 <li data-ng-hide="!authentication.isAuth"><a href="" data-ng-click="logOut()">Đăng xuất</a></li>
             </ul>
         </div>
@@ -64,22 +63,22 @@
 </nav>
 <body>
     <div class="body-content" data-ng-view="">
-        <hr />
-        <footer>
-            <div id="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p class="text-muted">Created by <a target="_blank" href="https://www.facebook.com/kynangsong.org/?fref=ts">KNSERS</a></p>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="text-muted">Developed Team: <a target="_blank" href="#">KNSER</a></p>
-                        </div>
+    </div>
+    <hr />
+    <footer>
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="text-muted">Created by <a target="_blank" href="https://www.facebook.com/kynangsong.org/?fref=ts">KNSERS</a></p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="text-muted">Developed Team: <a target="_blank" href="#">KNSER</a></p>
                     </div>
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
     <script src="scripts/angular.min.js"></script>
     <script src="scripts/angular.js"></script>
     <script src="scripts/angular-local-storage.min.js"></script>
