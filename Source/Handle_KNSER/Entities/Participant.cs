@@ -10,10 +10,9 @@ namespace Handle_KNSER.Entities
     {
         [Key]
         public int ParticipantId { get; set; }
-
         public virtual Event Event { get; set; }
         public virtual Member Member { get; set; }
-        public DateTime PartDate { get; set; }
+        public DateTime? PartDate { get; set; }
         public string EventRole { get; set; }
     }
 }

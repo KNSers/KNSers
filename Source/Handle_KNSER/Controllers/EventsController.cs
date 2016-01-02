@@ -42,25 +42,26 @@ namespace Handle_KNSER.Controllers
         }
 
         [HttpGet]
-        [Route("api/Events/GetDetails")]
-        public HttpResponseMessage getDetails(string id)
+        public HttpResponseMessage getEventDetails(int id)
         {
-            Event ev = new Event();
             if (ModelState.IsValid)
             {
-                int Id = int.Parse(id);
-                ev = _repo.Events.SingleOrDefault(s => s.EventId == Id);
-
-                if (ev == null)
+                var query = _repo.Participants.Where(s => s.Event.EventId == id)
+                                 .Select(x => new
+                                 {
+                                     x.Event.Name,
+                                     x.Member
+                                 });
+                if (query == null)
                 {
-                    return Request.CreateResponse(HttpStatusCode.NotFound);
+                    throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
                 }
+                return Request.CreateResponse(HttpStatusCode.OK, query.ToList());
             }
-
-            return Request.CreateResponse(HttpStatusCode.OK, ev);
-
-            
-        }
-
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError);
+            }
+        }   
     }
 }

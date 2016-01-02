@@ -933,8 +933,6 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
-    <Compile Include="Controllers\RequestController.cs" />
-    <Compile Include="Controllers\RssEventController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -957,13 +955,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\RssEvent\Index.cshtml" />
     <Content Include="scripts\version.json" />
     <Content Include="Views\Error\PageNotFound.cshtml" />
-    <Content Include="Views\Request\Create.cshtml" />
     <Content Include="Views\Member\Index.cshtml" />
     <Content Include="Views\Noti\Index.cshtml" />
-    <Content Include="Views\Request\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

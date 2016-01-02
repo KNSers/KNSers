@@ -250,6 +250,10 @@
     <Compile Include="Migrations\201601020730521_AspUserMember_DB.Designer.cs">
       <DependentUpon>201601020730521_AspUserMember_DB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601021045543_Participant_DB.cs" />
+    <Compile Include="Migrations\201601021045543_Participant_DB.Designer.cs">
+      <DependentUpon>201601021045543_Participant_DB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\ExternalLoginModels.cs" />
@@ -316,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201601020730521_AspUserMember_DB.resx">
       <DependentUpon>201601020730521_AspUserMember_DB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601021045543_Participant_DB.resx">
+      <DependentUpon>201601021045543_Participant_DB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
