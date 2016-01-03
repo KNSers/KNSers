@@ -46,12 +46,12 @@ namespace Handle_KNSER.Controllers
             {
                 ClaimsPrincipal principal = Request.GetRequestContext().Principal as ClaimsPrincipal;
                 var UserName = ClaimsPrincipal.Current.Identity.Name;
-                var _Member = _userInfo.Users.SingleOrDefault(s => s.UserName == UserName).KNSId;
-                if (String.IsNullOrEmpty(_Member.ToString()))
+                var _Member = _userInfo.Users.SingleOrDefault(s => s.UserName == UserName);
+                if (_Member == null)
                 {
                     return Request.CreateResponse(HttpStatusCode.NotFound);
                 }
-                return Request.CreateResponse(HttpStatusCode.OK, _Member.ToString());
+                return Request.CreateResponse(HttpStatusCode.OK, _Member);
             }
             else
             {

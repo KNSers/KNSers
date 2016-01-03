@@ -6,15 +6,14 @@ app.controller('infoController', ['$scope', '$http', InfoController]);
 //angularjs controller method
 function InfoController($scope, $http) {
     $scope.loading = true;
-    $scope.studentmode = true;
-    $scope.enddatemode = false;
+    $scope.editMode = true;
     $scope.LetterIdSelected = '1';
     //$scope.data.letterid = null;
     //alert("access");
     // get all events
     $http.get(serviceBase + "api/Account/Infomation").success(function (data, status, headers, config) {
         $scope.info = data;
-        alert(data.fullname);
+        //alert(data);
         $scope.loading = false;
     })
     .error(function () {
@@ -24,18 +23,11 @@ function InfoController($scope, $http) {
     });
 
     //by pressing toggleEdit button ng-click in html, this method will be hit
-    $scope.toggleEdit = function () {
-        this.student.editMode = !this.student.editMode;
+    $scope.enableEdit = function () {
+        $scope.editMode = !$scope.editMode;
     };
 
-    $scope.toggleView = function () {
-        this.student.viewMode = !this.student.viewMode;
+    $scope.confirm = function () {
+        alert("Thay đổi dữ liệu thành công!");
     }
-    $scope.toggleAdd = function () {
-        $scope.addMode = !$scope.addMode;
-    };
-
-    $scope.openMember = function () {
-        $scope.studentmode = !$scope.studentmode;
-    };
 }

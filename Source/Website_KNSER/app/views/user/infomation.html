@@ -1,38 +1,49 @@
 ﻿<form class="form-horizontal">
     <fieldset>
-        <legend class="text-primary">
-        </legend>
+        <h2 class="text-info">
+            Thông tin cá nhân</h2>
+        <div class="form-group">
+            <label for="select" class="col-lg-2 control-label">Mã số thành viên</label>
+            <div class="col-lg-10">
+                <input type="text" value="{{info.knsId}}" class="form-control" ng-disabled="editMode" />
+            </div>
+            <input type="hidden" data-ng-model="newInfo.LetterId">
+        </div>
+        <div class="form-group">
+            <label for="select" class="col-lg-2 control-label">Họ và Tên</label>
+            <div class="col-lg-10">
+                <input type="text" value="{{info.fullname}}" class="form-control" ng-disabled="editMode" />
+            </div>
+        </div>
+      
+        <div class="form-group">
+            <label for="select" class="col-lg-2 control-label">Ngày sinh</label>
+            <div class="col-lg-10">
+                <input type="text" value="{{info.birthDate}}" class="form-control" ng-disabled="editMode" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="select" class="col-lg-2 control-label">Trường</label>
+            <div class="col-lg-10">
+                <input type="text" value="{{info.university}}" class="form-control" ng-disabled="editMode" />
+            </div>
+            <input type="hidden" data-ng-model="NewRequest.LetterId">
+        </div>
+        <div class="form-group">
+            <label for="select" class="col-lg-2 control-label">Sơ lược bản thân</label>
+            <div class="col-lg-10">
+                <textarea class="form-control" ng-disabled="editMode">{{info.description}}</textarea>
+            </div>
+        </div>
+     
 
         <div class="form-group">
-            <label for="select" class="col-lg-2 control-label">Trưởng ban tổ chức</label>
+            <label for="select" class="col-lg-2 control-label"></label>
             <div class="col-lg-10">
-                <p class="control-label text-warning"></p>
+                <button type="button" class="btn btn-primary" data-ng-click="confirm()" ng-disabled="editMode">Xác nhận</button>
+                <button type="button" class="btn btn-default" data-ng-click="enableEdit()">Chỉnh sửa</button>
             </div>
-            <input type="hidden" data-ng-model="NewRequest.LetterId">
         </div>
-        <div class="form-group">
-            <label for="select" class="col-lg-2 control-label">Ngày tổ chức</label>
-            <div class="col-lg-10">
-                <p class="control-label text-warning"></p>
-            </div>
-            <input type="hidden" data-ng-model="NewRequest.LetterId">
-        </div>
-        <div class="form-group">
-            <label for="select" class="col-lg-2 control-label">Ngày kết thúc</label>
-            <div class="col-lg-10">
-                <p class="control-label text-warning">{{eventdetails[0].endDate}}</p>
-            </div>
-            <input type="hidden" data-ng-model="NewRequest.LetterId">
-        </div>
-        <div class="form-group">
-            <label for="select" class="col-lg-2 control-label">Điểm số chương trình</label>
-            <div class="col-lg-10">
-                <p class="control-label text-warning">{{eventdetails[0].score}}</p>
-            </div>
-            <input type="hidden" data-ng-model="NewRequest.LetterId">
-        </div>
+
     </fieldset>
 </form>
-<button type="button" class="btn btn-default" data-ng-click="memberdetails()">Thông tin thành viên</button>
-<h2 class="text-info" ng-hide="memberMode">Thành viên tham gia</h2>
-<button type="submit" class="btn btn-primary" data-ng-click="part(request)">Tham gia</button>
