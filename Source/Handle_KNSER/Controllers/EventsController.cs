@@ -53,10 +53,12 @@ namespace Handle_KNSER.Controllers
                                      x.Event.EventId,
                                      x.Event.EndDate,
                                      x.Event.Member.Fullname,
+                                     x.PartScore,
                                      x.Event.Member.KNSId,
                                      x.Event.Score,
                                      x.Event.Name,
                                      x.Event.OtherId,
+                                     x.EventRole,
                                      x.Member,
                                      x.PartDate
                                  });

@@ -258,6 +258,10 @@
     <Compile Include="Migrations\201601030752486_PartScore_ParticipantsDB.Designer.cs">
       <DependentUpon>201601030752486_PartScore_ParticipantsDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601030914180_MemberUserDB.cs" />
+    <Compile Include="Migrations\201601030914180_MemberUserDB.Designer.cs">
+      <DependentUpon>201601030914180_MemberUserDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\ExternalLoginModels.cs" />
@@ -330,6 +334,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201601030752486_PartScore_ParticipantsDB.resx">
       <DependentUpon>201601030752486_PartScore_ParticipantsDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601030914180_MemberUserDB.resx">
+      <DependentUpon>201601030914180_MemberUserDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

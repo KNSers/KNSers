@@ -10,13 +10,15 @@ function InfoController($scope, $http) {
     $scope.enddatemode = false;
     $scope.LetterIdSelected = '1';
     //$scope.data.letterid = null;
-
+    //alert("access");
     // get all events
-    $http.get(serviceBase + "api/Events/Get").success(function (data, status, headers, config) {
-        $scope.events = data;
+    $http.get(serviceBase + "api/Account/Infomation").success(function (data, status, headers, config) {
+        $scope.info = data;
+        alert(data.fullname);
         $scope.loading = false;
     })
     .error(function () {
+        alert("not get");
         $scope.error = "An Error has occured while loading posts!";
         $scope.loading = false;
     });

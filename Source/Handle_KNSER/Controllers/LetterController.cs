@@ -59,24 +59,26 @@ namespace Handle_KNSER.Controllers
                 // Object dùng để lấy UserId hienej hành
                 ClaimsPrincipal principal = Request.GetRequestContext().Principal as ClaimsPrincipal;
 
-                var UserName = ClaimsPrincipal.Current.Identity.Name;
+                var UserIdPresent = ClaimsPrincipal.Current.Identity.Name;
+                //var demo = from s in _userInfo.Users
+                //           select s.Fullname;
 
-                var _MemberId = _userInfo.Users.SingleOrDefault(s => s.UserName == UserName).KNSId;                
-                //var _MemberId. = _repo.Members.SingleOrDefault(s => s.KNSId == request.MemberId);
-                if (String.IsNullOrEmpty(_MemberId.ToString()))
+                try
                 {
-                    return Request.CreateResponse(HttpStatusCode.NotFound);
-                }
-                else
-                {
+                    //var _MemberUserId = _userInfo.FindByName(UserIdPresent);
+                    var _MemberId = _repo.Members.SingleOrDefault(s => s.KNSId == request.MemberId);
                     Entities.Request req = new Request();
-                    req.MemberId = _MemberId;
+                    req.MemberId = _MemberId.MemberId;
                     req.LetterId = request.LetterId;
                     req.Reason = request.Reason;
                     req.StartDate = DateTime.Now;
                     req.EndDate = DateTime.Now;
                     _repo.Requests.Add(req);
                     _repo.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    return Request.CreateResponse(HttpStatusCode.NotFound);
                 }
             }
             return Request.CreateResponse(HttpStatusCode.OK);

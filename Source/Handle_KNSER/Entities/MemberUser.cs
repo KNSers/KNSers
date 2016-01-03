@@ -17,9 +17,10 @@ namespace Handle_KNSER.Entities
         public string Address { get; set; }
 
         public string University { get; set; }
-        public int Year { get; set; }
+
+        public int? Year { get; set; }
         public string Description { get; set; }
-        public int Term { get; set; }
+        public int? Term { get; set; }
 
         public string KNSRole { get; set; }
 

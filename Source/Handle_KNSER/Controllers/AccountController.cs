@@ -1,4 +1,5 @@
-﻿using Handle_KNSER.Models;
+﻿using Handle_KNSER.Entities;
+using Handle_KNSER.Models;
 using Handle_KNSER.Results;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -22,6 +23,8 @@ namespace Handle_KNSER.Controllers
     public class AccountController : ApiController
     {
         private AuthRepository _repo = null;
+        private AuthContext _repoDB = null;
+        private UserManager<MemberUser> _userInfo = new UserManager<MemberUser>(new UserStore<MemberUser>(new AuthContext()));
 
         private IAuthenticationManager Authentication
         {
@@ -31,6 +34,29 @@ namespace Handle_KNSER.Controllers
         public AccountController()
         {
             _repo = new AuthRepository();
+            _repoDB = new AuthContext();
+        }
+
+
+        [HttpGet]
+        [Route("Infomation")]
+        public HttpResponseMessage GetInfomation()
+        {
+            if (ModelState.IsValid)
+            {
+                ClaimsPrincipal principal = Request.GetRequestContext().Principal as ClaimsPrincipal;
+                var UserName = ClaimsPrincipal.Current.Identity.Name;
+                var _Member = _userInfo.Users.SingleOrDefault(s => s.UserName == UserName).KNSId;
+                if (String.IsNullOrEmpty(_Member.ToString()))
+                {
+                    return Request.CreateResponse(HttpStatusCode.NotFound);
+                }
+                return Request.CreateResponse(HttpStatusCode.OK, _Member.ToString());
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError);
+            }
         }
 
         // POST api/Account/Register

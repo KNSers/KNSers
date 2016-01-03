@@ -10,6 +10,7 @@ app.controller('eventsController', ['$scope', 'eventsService', function ($scope,
     });
     $scope.eventdetails = [];
     $scope.viewDetails = function () {
+        //alert(this.event.eventId);
         // gắn dữ liệu qua eventService để page eventdetails lấy dữ liệu
         eventsService.setEventDetails(this.event.eventId);
     };

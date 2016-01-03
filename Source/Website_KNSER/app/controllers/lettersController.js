@@ -49,7 +49,7 @@ function LetterController($scope, $http) {
     $scope.add = function () {
         $scope.loading = true;
         this.NewRequest.LetterId = $scope.LetterIdSelected;
-        alert(this.NewRequest.startdate);
+        //alert(this.NewRequest.startdate);
         $http.post(serviceBase + 'api/Letter/Create', this.NewRequest)
             .success(function (data) {
                 alert("Hoàn tất");
