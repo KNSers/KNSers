@@ -14,5 +14,6 @@ namespace Handle_KNSER.Entities
         public virtual Member Member { get; set; }
         public DateTime? PartDate { get; set; }
         public string EventRole { get; set; }
+        public decimal PartScore { get; set; }
     }
 }
