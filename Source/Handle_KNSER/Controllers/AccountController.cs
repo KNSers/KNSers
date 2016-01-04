@@ -47,6 +47,9 @@ namespace Handle_KNSER.Controllers
                 ClaimsPrincipal principal = Request.GetRequestContext().Principal as ClaimsPrincipal;
                 var UserName = ClaimsPrincipal.Current.Identity.Name;
                 var _Member = _userInfo.Users.SingleOrDefault(s => s.UserName == UserName);
+                           
+
+                //string sql = "select * from AspNetUsers";
                 if (_Member == null)
                 {
                     return Request.CreateResponse(HttpStatusCode.NotFound);

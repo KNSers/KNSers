@@ -11,6 +11,8 @@ using System.Web;
 using System.Web.Http;
 using System.Security.Claims;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.SignalR;
+using Handle_KNSER.Hubs;
 
 namespace Handle_KNSER.Controllers
 {
@@ -26,7 +28,7 @@ namespace Handle_KNSER.Controllers
         
         // GET: api/Members
 
-        [Authorize]
+        
         [HttpGet]
         public List<Letter> Get()
         {
@@ -60,8 +62,8 @@ namespace Handle_KNSER.Controllers
                 ClaimsPrincipal principal = Request.GetRequestContext().Principal as ClaimsPrincipal;
 
                 var UserIdPresent = ClaimsPrincipal.Current.Identity.Name;
-                //var demo = from s in _userInfo.Users
-                //           select s.Fullname;
+                
+
 
                 try
                 {
@@ -75,6 +77,10 @@ namespace Handle_KNSER.Controllers
                     req.EndDate = DateTime.Now;
                     _repo.Requests.Add(req);
                     _repo.SaveChanges();
+
+                    /// signalR trans data to IndexRequest.html
+                    var _context = GlobalHost.ConnectionManager.GetHubContext<RequestHub>();
+                    _context.Clients.All.addNewRequest(req);
                 }
                 catch (Exception e)
                 {

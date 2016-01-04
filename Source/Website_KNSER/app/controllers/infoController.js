@@ -28,6 +28,7 @@ function InfoController($scope, $http) {
     };
 
     $scope.confirm = function () {
+        $scope.editMode = !$scope.editMode;
         alert("Thay đổi dữ liệu thành công!");
     }
 }

@@ -14,18 +14,18 @@
             </tr>
         </thead>
         <tbody>
-            <tr data-ng-repeat="request in requests">
+            <tr data-ng-repeat="request in requests | reverse">
                 <td data-ng-show="false" data-ng-model="request.id"><span>{{ request.requestid }}</span></td>
-                <td><span data-ng-model="request.fullname">{{ request.fullname }}</span></td>
-                <td><span data-ng-model="request.letter">{{ request.letter }}</span></td>
-                <td><span data-ng-model="request.startdate">{{ request.startdate }}</span></td>
-                <td><span data-ng-model="request.enddate">{{ request.enddate }}</span></td>
-                <td><span data-ng-model="request.reason">{{ request.reason }}</span></td>
+                <td><span data-ng-model="newRequest.fullname">{{ request.fullname }}</span></td>
+                <td><span data-ng-model="newRequest.letter">{{ request.letter }}</span></td>
+                <td><span data-ng-model="newRequest.startdate">{{ request.startdate }}</span></td>
+                <td><span data-ng-model="newRequest.enddate">{{ request.enddate }}</span></td>
+                <td><span data-ng-model="newRequest.reason">{{ request.reason }}</span></td>
                 <td>
-                    <span data-ng-model="request.approval">{{ request.approval ? 'Đã duyệt' : 'Chưa duyệt' }}</span>
+                    <span data-ng-model="newRequest.approval">{{ request.approval ? 'Đã duyệt' : 'Chưa duyệt' }}</span>
                 </td>
-                <td><button type="submit" class="btn btn-primary" data-ng-click="approval(request)">Duyệt đơn</button></td>
-                <td><button type="submit" class="btn btn-warning" data-ng-click="cancel(request)"> Bỏ duyệt</button></td>
+                <td><button type="submit" class="btn btn-primary" data-ng-click="approval(request)" ng-disabled="request.approval">Duyệt đơn</button></td>
+                <td><button type="submit" class="btn btn-warning" data-ng-click="cancel(request)" ng-disabled="!request.approval"> Bỏ duyệt</button></td>
             </tr>
         </tbody>
 

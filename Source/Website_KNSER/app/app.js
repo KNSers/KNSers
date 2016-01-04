@@ -40,13 +40,13 @@ app.config(function ($routeProvider) {
 
 
     $routeProvider.when("/admin/IndexRequest", {
-        controller: "requestsController",
+        controller: "requestRealtimeController",
         templateUrl: "/app/views/admin/IndexRequest.html"
     });
 
     $routeProvider.when("/user/request", {
         controller: "requestsController",
-        controller: "lettersController",
+        controller: "letterRealtimeController",
         templateUrl: "/app/views/user/request.html"
     });
 
@@ -70,6 +70,10 @@ app.config(function ($routeProvider) {
         templateUrl: "/app/views/user/eventdetails.html"
     });
 
+    $routeProvider.when("/user/contact", {
+        controller: "contactController",
+        templateUrl: "/app/views/user/contact.html"
+    });
 
     $routeProvider.otherwise({ redirectTo: "/home" });
 
