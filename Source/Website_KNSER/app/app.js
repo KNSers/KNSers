@@ -40,13 +40,13 @@ app.config(function ($routeProvider) {
 
 
     $routeProvider.when("/admin/IndexRequest", {
-        controller: "requestRealtimeController",
+        controller: "requestsController",
         templateUrl: "/app/views/admin/IndexRequest.html"
     });
 
     $routeProvider.when("/user/request", {
         controller: "requestsController",
-        controller: "letterRealtimeController",
+        controller: "lettersController",
         templateUrl: "/app/views/user/request.html"
     });
 

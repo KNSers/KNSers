@@ -33,9 +33,9 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav" id="navigation-bar">
-                <li id="gui-don-xin-phep"><a href="#/user/request"><span ng-class="{active : index == selectedIndex}" ng-click="itemClicked($index)">Gửi đơn xin phép</span></a></li>
-                <li id="chuong-trinh"><a href="#/user/event"><span ng-class="{active : index == selectedIndex}" ng-click="itemClicked($index)">Chương trình</span></a></li>
-                <li class="dropdown">
+                <li id="gui-don-xin-phep" data-ng-hide="!authentication.isAuth"><a href="#/user/request"><span ng-class="{active : index == selectedIndex}" ng-click="itemClicked($index)">Gửi đơn xin phép</span></a></li>
+                <li id="chuong-trinh" data-ng-hide="!authentication.isAuth"><a href="#/user/event"><span ng-class="{active : index == selectedIndex}" ng-click="itemClicked($index)">Chương trình</span></a></li>
+                <li class="dropdown" data-ng-hide="!authentication.isAuth">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Quản lý<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#/user/event">Chương trình CLB</a></li>
@@ -125,14 +125,14 @@
     <script src="app/controllers/refreshController.js?v=2"></script>
     <script src="app/controllers/tokensManagerController.js?v=2"></script>
     <script src="app/controllers/associateController.js?v=2"></script>
-    <!--<script src="app/controllers/lettersController.js?v=2"></script>-->
-    <!--<script src="app/controllers/requestsController.js"></script>-->
+    <script src="app/controllers/lettersController.js?v=2"></script>
+    <script src="app/controllers/requestsController.js"></script>
     <script src="app/controllers/rsseventController.js"></script>
     <script src="app/controllers/eventsController.js"></script>
     <script src="app/controllers/eventdetailsController.js"></script>
     <script src="app/controllers/infoController.js"></script>
 
-    <script src="app/controllers/letterRealtimeController.js?v=2"></script>
-    <script src="app/controllers/requestRealtimeController.js"></script>
+    <!--<script src="app/controllers/letterRealtimeController.js?v=2"></script>
+    <script src="app/controllers/requestRealtimeController.js"></script>-->
 </body>
 </html>

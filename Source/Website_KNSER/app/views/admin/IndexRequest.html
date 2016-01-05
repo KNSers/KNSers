@@ -14,7 +14,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr data-ng-repeat="request in requests | reverse">
+            <tr data-ng-repeat="request in requests">
                 <td data-ng-show="false" data-ng-model="request.id"><span>{{ request.requestid }}</span></td>
                 <td><span data-ng-model="newRequest.fullname">{{ request.fullname }}</span></td>
                 <td><span data-ng-model="newRequest.letter">{{ request.letter }}</span></td>

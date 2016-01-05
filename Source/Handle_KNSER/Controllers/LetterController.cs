@@ -79,8 +79,8 @@ namespace Handle_KNSER.Controllers
                     _repo.SaveChanges();
 
                     /// signalR trans data to IndexRequest.html
-                    var _context = GlobalHost.ConnectionManager.GetHubContext<RequestHub>();
-                    _context.Clients.All.addNewRequest(req);
+                    //var _context = GlobalHost.ConnectionManager.GetHubContext<RequestHub>();
+                    //_context.Clients.All.addNewRequest(req);
                 }
                 catch (Exception e)
                 {

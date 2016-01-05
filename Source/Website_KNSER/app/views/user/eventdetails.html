@@ -1,5 +1,6 @@
 ﻿<form class="form-horizontal">
     <fieldset>
+        <input type="hidden" data-ng-model="EventDetail.EventId" value="{{eventdetails[0].eventId}}"/>
         <legend class="text-primary">{{eventdetails[0].otherId}} - {{eventdetails[0].name}}
         </legend>
         
@@ -15,7 +16,7 @@
             <div class="col-lg-10">
                 <p class="control-label text-warning">{{eventdetails[0].startDate}}</p>
             </div>
-            <input type="hidden" data-ng-model="NewRequest.LetterId">
+            <input type="hidden">
         </div>
         <div class="form-group">
             <label for="select" class="col-lg-2 control-label">Ngày kết thúc</label>
@@ -29,10 +30,12 @@
             <div class="col-lg-10">
                 <p class="control-label text-warning">{{eventdetails[0].score}}</p>
             </div>
-            <input type="hidden" data-ng-model="NewRequest.LetterId">
         </div>
     </fieldset>
+    <button type="submit" class="btn btn-success" data-ng-click="part()">Tham gia</button>
+    <button type="submit" class="btn btn-danger" data-ng-click="unpart(Member)">Bỏ tham gia</button>
 </form>
+<hr />
 <button type="button" class="btn btn-default" data-ng-click="memberdetails()">Thông tin thành viên</button>
 <h2 class="text-info" ng-hide="memberMode">Thành viên tham gia</h2>
 <div id="index-account" ng-hide="memberMode">
@@ -49,9 +52,9 @@
         </thead>
         <tbody>
             <tr data-ng-repeat="eventdetail in eventdetails">
-                <td data-ng-show="false" data-ng-model="request.id"><span>{{ eventdetail.member.memberId }}</span></td>
+                <td data-ng-show="false" data-ng-model="EventDetail.Member.Id"><span>{{ eventdetail.member.memberId }}</span></td>
                 <td><span>{{ eventdetail.member.term }}</span></td>
-                <td><span data-ng-model="request.letter">{{ eventdetail.member.knsId }}</span></td>
+                <td><span> {{eventdetail.member.knsId }}</span></td>
                 <td><span data-ng-model="request.startdate">{{ eventdetail.eventRole }}</span></td>
                 <td><span data-ng-model="request.enddate">{{ eventdetail.member.fullname }}</span></td>
                 <td><input type="number" value="{{eventdetail.partScore}}" ng-disabled="scoreMode"/></td>
@@ -61,5 +64,4 @@
 
     </table>
 </div>
-<button type="submit" class="btn btn-success" data-ng-click="part(request)">Tham gia</button>
-<button type="submit" class="btn btn-danger" data-ng-click="part(request)">Bỏ tham gia</button>
+

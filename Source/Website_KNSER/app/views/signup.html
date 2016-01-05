@@ -1,8 +1,8 @@
-﻿<h2 class="">Đăng ký</h2>
-<form class="form-horizontal" role="form">
-    
+﻿<h2 class="text-primary" data-ng-hide="!authentication.isAuth">Đăng ký</h2>
+<form class="form-horizontal" role="form" data-ng-hide="!authentication.isAuth">
+
     <div class="form-group">
-        
+
         <label class="col-lg-2 control-label text-center">Tên đăng nhập</label>
         <div class="col-lg-10">
             <input type="text" class="form-control" placeholder="Tên tài khoản" data-ng-model="registration.userName" required autofocus>
@@ -15,14 +15,14 @@
             <input type="password" class="form-control" placeholder="Mật khẩu" data-ng-model="registration.password" required>
         </div>
     </div>
-        
+
     <div class="form-group">
         <label class="col-lg-2 control-label">Nhập lại mật khẩu</label>
         <div class="col-lg-10">
             <input type="password" class="form-control" placeholder="Xác nhận lại mật khẩu" data-ng-model="registration.confirmPassword" required>
         </div>
     </div>
-        
+
     <div class="form-group">
         <div class="col-lg-10 col-lg-offset-2">
             <button class="btn btn-lg btn-info" type="submit" data-ng-click="signUp()">XÁC NHẬN</button>
@@ -30,7 +30,7 @@
                 {{message}}
             </div>
         </div>
-     </div>
-        
+    </div>
+
 </form>
 

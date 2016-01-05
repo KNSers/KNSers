@@ -23,12 +23,21 @@ app.factory('eventsService', ['$http', 'ngAuthSettings', function ($http, ngAuth
         })
     };
    
-
+    var _participant = function (EventId) {
+        return $http.post(serviceBase + 'api/Events/Participant', EventId)
+            .success(function (results) {
+                alert("Tham gia thành công");
+            })
+            .error(function (results) {
+                alert("Lỗi");
+            })
+        };
 
     //eventsServiceFactory.setEventDetails = _setEventDetails;
     eventsServiceFactory.getEvents = _getEvents;
     eventsServiceFactory.getEventDetails = _getEventDetails;
     eventsServiceFactory.setEventDetails = _setEventDetails;
+    eventsServiceFactory.participant = _participant;
     return eventsServiceFactory;
 
 }]);
